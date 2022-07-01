@@ -29,13 +29,25 @@
 }
 
 .use {
+  float: left;
+  display: block;
+  width: 600px;
+
+  margin: 2px;
+  border: 2px solid black;
+}
+.usePos {
   width: 600px;
   display: table-cell;
   width: 300px;
   height: 500px;
-  border: 2px solid black;
 }
 .notUse {
+  float: left;
+  display: block;
+  width: 150px;
+
+  margin: 2px;
   display: table-cell;
 }
 

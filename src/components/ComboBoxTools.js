@@ -2,13 +2,13 @@ import React from "react";
 import { DnDBuilder, useTools, item, branch } from "build-ui";
 import { Button } from "react-bootstrap";
 
-const CheckBoxTools = () => {
+const ComboBoxTools = () => {
   const tools = useTools();
   const handleDragTool = () => {
-    const checkbox = item({
-      type: "CheckBox",
+    const comboBox = item({
+      type: "ComboBox",
     });
-    const data = branch(checkbox);
+    const data = branch(comboBox);
     tools.triggerDragStart({
       data: data,
     });
@@ -19,9 +19,9 @@ const CheckBoxTools = () => {
       onDragEnd={tools.handleDragEnd}
       draggable={true}
     >
-      <Button>CheckBox</Button>
+      <Button>ComboBox</Button>
     </DnDBuilder>
   );
 };
 
-export default CheckBoxTools;
+export default ComboBoxTools;

@@ -7,8 +7,10 @@ export const SectionView = ({ id, ...props }) => {
     id: id,
   });
   return (
-    <DnDBuilder onDrop={editor.handleDrop}>
-      <Section {...props} />
-    </DnDBuilder>
+    <div className="use">
+      <DnDBuilder onDrop={editor.handleDrop}>
+        <Section {...props} />
+      </DnDBuilder>
+    </div>
   );
 };

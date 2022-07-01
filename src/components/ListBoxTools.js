@@ -2,13 +2,13 @@ import React from "react";
 import { DnDBuilder, useTools, item, branch } from "build-ui";
 import { Button } from "react-bootstrap";
 
-const CheckBoxTools = () => {
+const ListBoxTools = () => {
   const tools = useTools();
   const handleDragTool = () => {
-    const checkbox = item({
-      type: "CheckBox",
+    const listBox = item({
+      type: "ListBox",
     });
-    const data = branch(checkbox);
+    const data = branch(listBox);
     tools.triggerDragStart({
       data: data,
     });
@@ -19,9 +19,9 @@ const CheckBoxTools = () => {
       onDragEnd={tools.handleDragEnd}
       draggable={true}
     >
-      <Button>CheckBox</Button>
+      <Button>ListBox</Button>
     </DnDBuilder>
   );
 };
 
-export default CheckBoxTools;
+export default ListBoxTools;
