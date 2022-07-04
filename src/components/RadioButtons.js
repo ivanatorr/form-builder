@@ -6,7 +6,7 @@ const RadioButtons = () => {
     <>
       <ToggleButtonGroup
         type="RadioButtons"
-        defaultValue={[1, 2, 3]}
+        defaultValue={[1]}
         className="mb-2"
       >
         <ToggleButton value={1}>foo</ToggleButton>

@@ -5,12 +5,8 @@ import { Button } from "react-bootstrap";
 const InputTools = () => {
   const tools = useTools();
   const handleDragTool = () => {
-    const inputProps = {
-      text: "Greet me",
-    };
     const input = item({
       type: "Input",
-      props: inputProps,
     });
     const data = branch(input);
     tools.triggerDragStart({
