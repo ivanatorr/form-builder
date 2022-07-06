@@ -36,19 +36,36 @@
   margin: 2px;
   border: 2px solid black;
 }
-.usePos {
-  width: 600px;
+
+.useLabel {
+  float: left;
+  display: block;
+  width: 100%;
+
+  margin: 2px;
+  border: 2px solid black;
+}
+.usePosTable {
+  float: left;
+  width: 100%;
   display: table-cell;
+  height: 500px;
+}
+.usePos {
+  float: left;
   width: 300px;
+  margin: 2px;
+}
+.usePosLabel {
+  width: 100%;
+  display: table-cell;
   height: 500px;
 }
 .notUse {
   float: left;
-  display: block;
-  width: 150px;
-
-  margin: 2px;
-  display: table-cell;
+  width: 300px;
+  display: flex;
+  margin-left: 500px;
 }
 .close {
   position: absolute;
