@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DnDBuilder, useEditor, useActions, DnDListener } from "build-ui";
+import { DnDBuilder, useEditor, useActions } from "build-ui";
 import { TableGrid } from "../components/TableGrid";
 import { Button, Table } from "react-bootstrap";
 import { SectionLabel } from "../components/SectionLabel";
@@ -59,19 +59,18 @@ export const TableGridView = ({ id, ...props }) => {
         </thead>
         <tbody>
           <tr>
-            <DnDListener
-              {...props}
-              listenTransferType="layers"
+            <DnDBuilder
+              className="tableGrid"
               onDrop={editor.handleDrop}
               as="td"
-            ></DnDListener>
+              {...props}
+            ></DnDBuilder>
 
-            <DnDListener
-              {...props}
-              listenTransferType="layers1"
+            <DnDBuilder
               onDrop={editor.handleDrop}
               as="td"
-            ></DnDListener>
+              {...props}
+            ></DnDBuilder>
           </tr>
         </tbody>
       </Table>
