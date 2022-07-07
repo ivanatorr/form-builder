@@ -18,6 +18,7 @@ import { SectionViewLabel } from "./viewComponents/SectionViewLabel";
 import SectionLabelTools from "./components/SectionLabelTools";
 import { TableGridView } from "./viewComponents/TableGridView";
 import TableGridTools from "./components/TableGridTools";
+import TopBar from "./TopBar";
 
 const MyBuilder = () => {
   const section = item({
@@ -45,6 +46,7 @@ const MyBuilder = () => {
   return (
     <>
       <Builder initialTree={tree}>
+        <TopBar />
         <Workspace view={view} />
         {/* <Workspace view={viewLabel} /> */}
         <div className="notUse">
@@ -67,9 +69,7 @@ const MyBuilder = () => {
             <ListGroup.Item>
               <RadioButtonsTools />
             </ListGroup.Item>
-            <ListGroup.Item>
-              <SectionLabelTools />
-            </ListGroup.Item>
+
             <ListGroup.Item>
               <TableGridTools />
             </ListGroup.Item>

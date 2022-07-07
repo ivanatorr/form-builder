@@ -7,7 +7,8 @@ export const SectionViewLabel = ({ id, ...props }) => {
   const editor = useEditor({
     id: id,
   });
-  console.log(id);
+  // console.log(id);
+  console.log(props);
   return (
     <div>
       <DnDBuilder onDrop={editor.handleDrop}>
