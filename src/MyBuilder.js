@@ -14,11 +14,13 @@ import ComboBoxTools from "./components/ComboBoxTools";
 import { ComboBoxView } from "./viewComponents/ComboBoxView";
 import RadioButtonsTools from "./components/RadioButtonsTools";
 import { RadioButtonsView } from "./viewComponents/RadioButtonsView";
-import { SectionViewLabel } from "./viewComponents/SectionViewLabel";
+import { SectionLabelView } from "./viewComponents/SectionLabelView";
 import SectionLabelTools from "./components/SectionLabelTools";
 import { TableGridView } from "./viewComponents/TableGridView";
 import TableGridTools from "./components/TableGridTools";
 import TopBar from "./TopBar";
+import { TableRowView } from "./viewComponents/TableRowView";
+import { TableDataView } from "./viewComponents/TableDataView";
 
 const MyBuilder = () => {
   const section = item({
@@ -35,8 +37,10 @@ const MyBuilder = () => {
     ListBox: ListBoxView,
     ComboBox: ComboBoxView,
     RadioButtons: RadioButtonsView,
-    SectionLabel: SectionViewLabel,
+    SectionLabel: SectionLabelView,
     TableGrid: TableGridView,
+    TableRow: TableRowView,
+    TableData: TableDataView
   };
   //   const viewLabel = {
   //     Section: SectionViewLabel,
@@ -48,7 +52,6 @@ const MyBuilder = () => {
       <Builder initialTree={tree}>
         <TopBar />
         <Workspace view={view} />
-        {/* <Workspace view={viewLabel} /> */}
         <div className="notUse">
           <ListGroup>
             <ListGroup.Item>
