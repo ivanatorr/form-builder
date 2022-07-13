@@ -40,16 +40,12 @@ export const TableGridView = ({ id, ...props }) => {
   };
 
   return (
-    // <div>
-    //   {inputFields.map((input, index) => {
-    //     return (
-    <DnDBuilder
-      onDragStart={editor.handleDragStart}
-      onDragEnd={editor.handleDragEnd}
-      onDragLeave={editor.toDnDHandler}
-      // onDrop={editor.handleDrop}
-      draggable={true}
-    >
+    <div>
+    
+   
+    
+    
+
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
@@ -62,12 +58,20 @@ export const TableGridView = ({ id, ...props }) => {
             <DnDBuilder
               className="tableGrid"
               onDrop={editor.handleDrop}
+              onDragStart={editor.handleDragStart}
+              onDragEnd={editor.handleDragEnd}
+              onDragLeave={editor.toDnDHandler}
+              draggable={true}
               as="td"
               {...props}
             ></DnDBuilder>
 
             <DnDBuilder
               onDrop={editor.handleDrop}
+              onDragStart={editor.handleDragStart}
+              onDragEnd={editor.handleDragEnd}
+              onDragLeave={editor.toDnDHandler}
+              draggable={true}
               as="td"
               {...props}
             ></DnDBuilder>
@@ -77,9 +81,8 @@ export const TableGridView = ({ id, ...props }) => {
       <Button variant="danger" onClick={() => handleDelete()}>
         x
       </Button>
-    </DnDBuilder>
-    //     );
-    //   })}
-    // </div>
+
+  
+    </div>
   );
 };
