@@ -8,7 +8,30 @@ const TableGridTools = () => {
     const tableGrid = item({
       type: "TableGrid",
     });
-    const data = branch(tableGrid);
+    const tableRow = item({
+      type: 'TableRow'
+    })
+    const tableDataOne = item({
+      type: 'TableData'
+    });
+    const tableDataTwo = item({
+      type: 'TableData'
+    });
+    const tableDataOneBranch = (
+      branch(tableDataOne)
+    );
+    const tableDataTwoBranch = (
+      branch(tableDataTwo)
+    );
+    const tableRowBranch = (
+      branch(tableRow)
+      .with_child(tableDataOneBranch)
+      .with_child(tableDataTwoBranch)
+    );
+    const data = (
+      branch(tableGrid)
+      .with_child(tableRowBranch)
+    )
     tools.triggerDragStart({
       data: data,
     });

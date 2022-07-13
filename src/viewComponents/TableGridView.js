@@ -40,49 +40,22 @@ export const TableGridView = ({ id, ...props }) => {
   };
 
   return (
-    <div>
-    
-   
-    
-    
-
-      <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>Drop element</th>
-            <th>Drop element</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <DnDBuilder
-              className="tableGrid"
-              onDrop={editor.handleDrop}
-              onDragStart={editor.handleDragStart}
-              onDragEnd={editor.handleDragEnd}
-              onDragLeave={editor.toDnDHandler}
-              draggable={true}
-              as="td"
-              {...props}
-            ></DnDBuilder>
-
-            <DnDBuilder
-              onDrop={editor.handleDrop}
-              onDragStart={editor.handleDragStart}
-              onDragEnd={editor.handleDragEnd}
-              onDragLeave={editor.toDnDHandler}
-              draggable={true}
-              as="td"
-              {...props}
-            ></DnDBuilder>
-          </tr>
-        </tbody>
-      </Table>
+    // <div>
+    //   {inputFields.map((input, index) => {
+    //     return (
+    <DnDBuilder
+      onDragStart={editor.handleDragStart}
+      onDragEnd={editor.handleDragEnd}
+      // onDrop={editor.handleDrop}
+      draggable={true}
+    >
+      <TableGrid {...props} />
       <Button variant="danger" onClick={() => handleDelete()}>
         x
       </Button>
-
-  
-    </div>
+    </DnDBuilder>
+    //     );
+    //   })}
+    // </div>
   );
 };
