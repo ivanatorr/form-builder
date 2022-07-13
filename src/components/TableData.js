@@ -1,15 +1,15 @@
 import React from "react";
 import "../App.css";
 
-export const SectionLabel = React.forwardRef(({
+export const TableData = React.forwardRef(({
     children,
     ...props
 }, ref) => {
-    return <div
+    return <td
         {...props}
         ref = {ref}
     >
-        Section Label
+        Table Data
         {children}
-    </div>
+    </td>
 });

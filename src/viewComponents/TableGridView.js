@@ -46,34 +46,10 @@ export const TableGridView = ({ id, ...props }) => {
     <DnDBuilder
       onDragStart={editor.handleDragStart}
       onDragEnd={editor.handleDragEnd}
-      onDragLeave={editor.toDnDHandler}
       // onDrop={editor.handleDrop}
       draggable={true}
     >
-      <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>Drop element</th>
-            <th>Drop element</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <DnDBuilder
-              className="tableGrid"
-              onDrop={editor.handleDrop}
-              as="td"
-              {...props}
-            ></DnDBuilder>
-
-            <DnDBuilder
-              onDrop={editor.handleDrop}
-              as="td"
-              {...props}
-            ></DnDBuilder>
-          </tr>
-        </tbody>
-      </Table>
+      <TableGrid {...props} />
       <Button variant="danger" onClick={() => handleDelete()}>
         x
       </Button>
