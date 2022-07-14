@@ -14,13 +14,15 @@ const ListBoxTools = () => {
     });
   };
   return (
-    <DnDBuilder
-      onDragStart={handleDragTool}
-      onDragEnd={tools.handleDragEnd}
-      draggable={true}
-    >
-      <Button>ListBox</Button>
-    </DnDBuilder>
+    <div className="fontStyle">
+      <DnDBuilder
+        onDragStart={handleDragTool}
+        onDragEnd={tools.handleDragEnd}
+        draggable={true}
+      >
+        ListBox
+      </DnDBuilder>
+    </div>
   );
 };
 

@@ -14,13 +14,15 @@ const RadioButtonsTools = () => {
     });
   };
   return (
-    <DnDBuilder
-      onDragStart={handleDragTool}
-      onDragEnd={tools.handleDragEnd}
-      draggable={true}
-    >
-      <Button> RadioButtons</Button>
-    </DnDBuilder>
+    <div className="fontStyle">
+      <DnDBuilder
+        onDragStart={handleDragTool}
+        onDragEnd={tools.handleDragEnd}
+        draggable={true}
+      >
+        RadioButtons
+      </DnDBuilder>
+    </div>
   );
 };
 

@@ -14,13 +14,15 @@ const ComboBoxTools = () => {
     });
   };
   return (
-    <DnDBuilder
-      onDragStart={handleDragTool}
-      onDragEnd={tools.handleDragEnd}
-      draggable={true}
-    >
-      <Button>ComboBox</Button>
-    </DnDBuilder>
+    <div className="fontStyle">
+      <DnDBuilder
+        onDragStart={handleDragTool}
+        onDragEnd={tools.handleDragEnd}
+        draggable={true}
+      >
+        ComboBox
+      </DnDBuilder>
+    </div>
   );
 };
 

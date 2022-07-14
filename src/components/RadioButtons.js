@@ -1,4 +1,3 @@
-import { Button } from "bootstrap";
 import React from "react";
 import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 
@@ -7,7 +6,7 @@ const RadioButtons = () => {
     <ToggleButtonGroup
       type="RadioButtons"
       defaultValue={[1, 2, 3]}
-      className="mb-2"
+      className="mb-3 mt-3"
     >
       <ToggleButton value={1}>foo</ToggleButton>
       <ToggleButton value={2}>bar</ToggleButton>

@@ -5,19 +5,17 @@ import { Table } from "react-bootstrap";
 export const Section = (props) => {
   console.log(props);
   return (
-    <div>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Drop element</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="usePosTable" {...props}></td>
-          </tr>
-        </tbody>
-      </Table>
+    <div className="mt-1">
+      <div className="fontStyle">
+        <Table striped bordered hover>
+          <thead className="text-center">Drop element</thead>
+          <tbody>
+            <tr>
+              <td className="usePosTable" {...props}></td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
     </div>
   );
 };

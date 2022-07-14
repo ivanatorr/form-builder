@@ -14,13 +14,15 @@ const InputTools = () => {
     });
   };
   return (
-    <DnDBuilder
-      onDragStart={handleDragTool}
-      onDragEnd={tools.handleDragEnd}
-      draggable={true}
-    >
-      <Button>Input</Button>
-    </DnDBuilder>
+    <div className="fontStyle">
+      <DnDBuilder
+        onDragStart={handleDragTool}
+        onDragEnd={tools.handleDragEnd}
+        draggable={true}
+      >
+        Input
+      </DnDBuilder>
+    </div>
   );
 };
 

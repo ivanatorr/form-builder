@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { DnDBuilder, useEditor, useActions } from "build-ui";
-import { Button } from "react-bootstrap";
+import { Button, Modal, Form } from "react-bootstrap";
 import ComboBox from "../components/ComboBox.js";
 
 export const ComboBoxView = ({ id }) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const editor = useEditor({
     id: id,
   });
@@ -23,16 +27,41 @@ export const ComboBoxView = ({ id }) => {
     // <form>
     //   {inputFields.map((input, index) => {
     //     return (
-    <DnDBuilder
-      onDragStart={editor.handleDragStart}
-      onDragEnd={editor.handleDragEnd}
-      draggable={true}
-    >
-      <ComboBox />
-      <Button variant="danger" onClick={() => handleDelete()}>
+    <>
+      <div onClick={handleShow}>
+        <DnDBuilder
+          onDragStart={editor.handleDragStart}
+          onDragEnd={editor.handleDragEnd}
+          draggable={true}
+        >
+          <ComboBox />
+          {/* <Button variant="danger" onClick={() => handleDelete()}>
         x
-      </Button>
-    </DnDBuilder>
+      </Button> */}
+        </DnDBuilder>
+      </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Text</Form.Label>
+              <Form.Control type="email" autoFocus />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => handleDelete()}>
+            Delete
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
     //     );
     //   })}
     // </form>

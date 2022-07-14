@@ -4,13 +4,7 @@ import { Table } from "react-bootstrap";
 
 export const TableGrid = (props) => {
   return (
-    <Table striped bordered hover variant="dark">
-      <thead>
-        <tr>
-          <th>Drop element</th>
-          <th>Drop element</th>
-        </tr>
-      </thead>
+    <Table striped bordered hover className="mb-3 mt-3">
       <tbody {...props} />
     </Table>
   );

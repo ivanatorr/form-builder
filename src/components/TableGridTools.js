@@ -9,41 +9,34 @@ const TableGridTools = () => {
       type: "TableGrid",
     });
     const tableRow = item({
-      type: 'TableRow'
-    })
+      type: "TableRow",
+    });
     const tableDataOne = item({
-      type: 'TableData'
+      type: "TableData",
     });
     const tableDataTwo = item({
-      type: 'TableData'
+      type: "TableData",
     });
-    const tableDataOneBranch = (
-      branch(tableDataOne)
-    );
-    const tableDataTwoBranch = (
-      branch(tableDataTwo)
-    );
-    const tableRowBranch = (
-      branch(tableRow)
+    const tableDataOneBranch = branch(tableDataOne);
+    const tableDataTwoBranch = branch(tableDataTwo);
+    const tableRowBranch = branch(tableRow)
       .with_child(tableDataOneBranch)
-      .with_child(tableDataTwoBranch)
-    );
-    const data = (
-      branch(tableGrid)
-      .with_child(tableRowBranch)
-    )
+      .with_child(tableDataTwoBranch);
+    const data = branch(tableGrid).with_child(tableRowBranch);
     tools.triggerDragStart({
       data: data,
     });
   };
   return (
-    <DnDBuilder
-      onDragStart={handleDragTool}
-      onDragEnd={tools.handleDragEnd}
-      draggable={true}
-    >
-      <Button>TableGrid</Button>
-    </DnDBuilder>
+    <div className="fontStyle">
+      <DnDBuilder
+        onDragStart={handleDragTool}
+        onDragEnd={tools.handleDragEnd}
+        draggable={true}
+      >
+        TableGrid
+      </DnDBuilder>
+    </div>
   );
 };
 

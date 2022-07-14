@@ -71,6 +71,9 @@
   float: left;
   width: 200px;
 }
+.fontStyle {
+  font-family: "Lucida Grande";
+}
 .close {
   position: absolute;
   top: 5px;

@@ -40,7 +40,7 @@ const MyBuilder = () => {
     SectionLabel: SectionLabelView,
     TableGrid: TableGridView,
     TableRow: TableRowView,
-    TableData: TableDataView
+    TableData: TableDataView,
   };
   //   const viewLabel = {
   //     Section: SectionViewLabel,

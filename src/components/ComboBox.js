@@ -4,7 +4,7 @@ import { Dropdown } from "react-bootstrap";
 const ComboBox = () => {
   return (
     <>
-      <Dropdown>
+      <Dropdown className="mb-3 mt-3">
         <Dropdown.Toggle variant="primary" id="dropdown-basic">
           Dropdown Button
         </Dropdown.Toggle>

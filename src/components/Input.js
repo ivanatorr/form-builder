@@ -1,10 +1,16 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 
 const Input = () => {
   return (
     <>
-      <Form.Control></Form.Control>
+      <InputGroup className="mb-3 mt-3">
+        <InputGroup.Text id="inputGroup-sizing-default">Input</InputGroup.Text>
+        <Form.Control
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+        />
+      </InputGroup>
     </>
   );
 };

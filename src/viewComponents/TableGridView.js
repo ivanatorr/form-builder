@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { DnDBuilder, useEditor, useActions } from "build-ui";
 import { TableGrid } from "../components/TableGrid";
-import { Button, Table } from "react-bootstrap";
+import { Button, Modal, CloseButton } from "react-bootstrap";
 import { SectionLabel } from "../components/SectionLabel";
 
 export const TableGridView = ({ id, ...props }) => {
   const editor = useEditor({
     id: id,
   });
-  const editorLabel = useEditor({
-    id: id,
-  });
+
   const handleMoveToBack = () => {
     actions.timeBatched.triggerShift({
       id: id,
@@ -40,22 +38,21 @@ export const TableGridView = ({ id, ...props }) => {
   };
 
   return (
-    // <div>
-    //   {inputFields.map((input, index) => {
-    //     return (
-    <DnDBuilder
-      onDragStart={editor.handleDragStart}
-      onDragEnd={editor.handleDragEnd}
-      // onDrop={editor.handleDrop}
-      draggable={true}
-    >
-      <TableGrid {...props} />
-      <Button variant="danger" onClick={() => handleDelete()}>
-        x
-      </Button>
-    </DnDBuilder>
-    //     );
-    //   })}
-    // </div>
+    <>
+      <DnDBuilder
+        onDragStart={editor.handleDragStart}
+        onDragEnd={editor.handleDragEnd}
+        // onDrop={editor.handleDrop}
+        draggable={true}
+      >
+        <Modal.Header>
+          <TableGrid {...props} />
+          <CloseButton onClick={() => handleDelete()} />
+        </Modal.Header>
+        {/* <Button variant="danger" onClick={() => handleDelete()}>
+          x
+        </Button> */}
+      </DnDBuilder>
+    </>
   );
 };

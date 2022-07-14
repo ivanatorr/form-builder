@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap";
 const CheckBox = () => {
   return (
     <>
-      <Form>
+      <Form className="mb-3 mt-3">
         <Form.Check
           type="switch"
           id="custom-switch"
