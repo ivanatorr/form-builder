@@ -7,7 +7,7 @@ const Alert = ({ message, text, ...rest }) => {
   };
   return (
     <>
-      <Button variant="primary" onClick={handleAlert} {...rest}>
+      <Button variant="secondary" onClick={handleAlert} {...rest}>
         {text}
       </Button>
     </>

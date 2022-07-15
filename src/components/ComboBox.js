@@ -5,11 +5,9 @@ const ComboBox = () => {
   return (
     <>
       <Dropdown className="mb-3 mt-3">
-        <Dropdown.Toggle variant="primary" id="dropdown-basic">
-          Dropdown Button
-        </Dropdown.Toggle>
+        <Dropdown.Toggle variant="secondary">Dropdown Button</Dropdown.Toggle>
 
-        <Dropdown.Menu>
+        <Dropdown.Menu variant="dark">
           <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
           <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>

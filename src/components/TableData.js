@@ -3,7 +3,7 @@ import "../App.css";
 
 export const TableData = React.forwardRef(({ children, ...props }, ref) => {
   return (
-    <td {...props} ref={ref}>
+    <td className="tableGrid" {...props} ref={ref}>
       {children}
     </td>
   );
