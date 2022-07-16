@@ -9,7 +9,7 @@ import {
   Dropdown,
   DropdownButton,
 } from "react-bootstrap";
-import SelectInput from "@material-ui/core/Select/SelectInput.js";
+
 
 export const InputView = ({ id, props }) => {
   const [labelChange, setLabel] = useState("");
