@@ -31,6 +31,7 @@ const MyBuilder = () => {
   const tree = branch(section);
 
   const view = {
+    Alert: AlertView,
     Section: SectionView,
     Input: InputView,
     CheckBox: CheckBoxView,

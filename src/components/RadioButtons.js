@@ -8,9 +8,15 @@ const RadioButtons = () => {
       defaultValue={[1, 2, 3]}
       className="mb-3 mt-3"
     >
-      <ToggleButton value={1}>foo</ToggleButton>
-      <ToggleButton value={2}>bar</ToggleButton>
-      <ToggleButton value={3}>baz</ToggleButton>
+      <ToggleButton variant="secondary" value={1}>
+        foo
+      </ToggleButton>
+      <ToggleButton variant="secondary" value={2}>
+        bar
+      </ToggleButton>
+      <ToggleButton variant="secondary" value={3}>
+        baz
+      </ToggleButton>
     </ToggleButtonGroup>
   );
 };
