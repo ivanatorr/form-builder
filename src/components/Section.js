@@ -7,8 +7,9 @@ export const Section = (props) => {
   return (
     <div className="mt-1">
       <div className="fontStyle">
-        <Table striped bordered hover>
-          <thead className="text-center">Drop element</thead>
+        <div className="text-center">Drop element</div>
+        <Table  striped bordered hover>
+         
           <tbody>
             <tr>
               <td className="usePosTable" {...props}></td>

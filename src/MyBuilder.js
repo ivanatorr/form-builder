@@ -53,7 +53,8 @@ const MyBuilder = () => {
         <TopBar />
         <Workspace view={view} />
         <div className="notUse">
-          <ListGroup>
+          <div className="mt-10">
+          <ListGroup >
             <ListGroup.Item>
               <AlertTools />
             </ListGroup.Item>
@@ -72,11 +73,11 @@ const MyBuilder = () => {
             <ListGroup.Item>
               <RadioButtonsTools />
             </ListGroup.Item>
-
             <ListGroup.Item>
               <TableGridTools />
             </ListGroup.Item>
           </ListGroup>
+          </div>
         </div>
       </Builder>
     </>
