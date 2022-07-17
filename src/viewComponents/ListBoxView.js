@@ -37,28 +37,29 @@ export const ListBoxView = ({ id }) => {
         x
       </Button> */}
         </DnDBuilder>
+        </div>
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form>
-              <Form.Group className="mb-3">
-                <Form.Label>Text</Form.Label>
-                <Form.Control type="email" autoFocus />
-              </Form.Group>
-            </Form>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => handleDelete()}>
-              Delete
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
+        <Modal.Header closeButton>
+          <Modal.Title>ListBox Style</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Label</Form.Label>
+              <Form.Control  />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={() => handleDelete()}>
+            Delete
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      
     </>
   );
 };

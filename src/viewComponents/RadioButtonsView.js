@@ -5,10 +5,15 @@ import RadioButtons from "../components/RadioButtons.js";
 
 export const RadioButtonsView = ({ id }) => {
   const [show, setShow] = useState(false);
+  const [sizeChange, setSize] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleChangeSize = (event) =>{
+    setSize(event.target.value)
+  }
+  
   const editor = useEditor({
     id: id,
   });
@@ -32,7 +37,7 @@ export const RadioButtonsView = ({ id }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
         >
-          <RadioButtons />
+          <RadioButtons size={sizeChange}/>
           {/* <Button variant="danger" onClick={() => handleDelete()}>
         x
       </Button> */}
@@ -40,18 +45,26 @@ export const RadioButtonsView = ({ id }) => {
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>RadioButtons Style</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Text</Form.Label>
+              <Form.Label>Label</Form.Label>
               <Form.Control type="email" autoFocus />
             </Form.Group>
           </Form>
         </Modal.Body>
+        <div class="dropdown">
+                <select class="form-select" onChange={handleChangeSize}>
+                  <option>Pick size</option>
+                  <option value={""}>Medium</option>
+                  <option value={"sm"}>Small</option>
+                  <option value={"lg"}>Large</option>
+                </select>
+              </div>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => handleDelete()}>
+          <Button variant="danger" onClick={() => handleDelete()}>
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>

@@ -4,6 +4,8 @@ import { Button, Modal, Form } from "react-bootstrap";
 import ComboBox from "../components/ComboBox.js";
 
 export const ComboBoxView = ({ id }) => {
+  const [labelChange, setLabel] = useState("Combobox");
+  const [sizeChange, setSize] = useState("");
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,6 +13,12 @@ export const ComboBoxView = ({ id }) => {
   const editor = useEditor({
     id: id,
   });
+  const handleChangeSize = (event) =>{
+    setSize(event.target.value)
+  }
+  const handleChange = (event) => {
+    setLabel(event.target.value);
+  };
   const actions = useActions();
   const handleDelete = () => {
     actions.timeBatched.triggerDelete({
@@ -34,7 +42,7 @@ export const ComboBoxView = ({ id }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
         >
-          <ComboBox />
+          <ComboBox label={labelChange} size={sizeChange}/>
           {/* <Button variant="danger" onClick={() => handleDelete()}>
         x
       </Button> */}
@@ -42,18 +50,26 @@ export const ComboBoxView = ({ id }) => {
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Combobox Style</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Text</Form.Label>
-              <Form.Control type="email" autoFocus />
+              <Form.Label>Label</Form.Label>
+              <Form.Control autoFocus onInput={handleChange}/>
             </Form.Group>
           </Form>
+          <div class="dropdown">
+                <select class="form-select" onChange={handleChangeSize}>
+                  <option>Pick size</option>
+                  <option value={""}>Medium</option>
+                  <option value={"sm"}>Small</option>
+                  <option value={"lg"}>Large</option>
+                </select>
+              </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => handleDelete()}>
+          <Button variant="danger" onClick={() => handleDelete()}>
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>

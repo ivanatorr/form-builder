@@ -5,9 +5,7 @@ import {
   Button,
   Modal,
   Form,
-  ButtonGroup,
-  Dropdown,
-  DropdownButton,
+  ButtonGroup
 } from "react-bootstrap";
 
 
@@ -103,7 +101,7 @@ export const InputView = ({ id, props }) => {
           </div>
         </ButtonGroup>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => handleDelete()}>
+          <Button variant="danger" onClick={() => handleDelete()}>
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>

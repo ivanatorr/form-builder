@@ -37,18 +37,18 @@ export const AlertView = ({ id, ...props }) => {
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Alert Style</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Text</Form.Label>
-              <Form.Control type="email" autoFocus />
+              <Form.Label>Label</Form.Label>
+              <Form.Control  autoFocus />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => handleDelete()}>
+          <Button variant="danger" onClick={() => handleDelete()}>
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>

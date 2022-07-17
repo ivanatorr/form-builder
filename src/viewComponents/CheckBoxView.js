@@ -5,10 +5,14 @@ import CheckBox from "../components/CheckBox.js";
 
 export const CheckBoxView = ({ id }) => {
   const [show, setShow] = useState(false);
+  const [labelChange, setLabel] = useState("Checkbox");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleChange = (event) => {
+    setLabel(event.target.value);
+  };
   const editor = useEditor({
     id: id,
     type: "checkbox",
@@ -33,7 +37,7 @@ export const CheckBoxView = ({ id }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
         >
-          <CheckBox />
+          <CheckBox label={labelChange}/>
 
           {/* <Button variant="danger" onClick={() => handleDelete()}>
             x
@@ -42,18 +46,18 @@ export const CheckBoxView = ({ id }) => {
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>CheckBox Style</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Text</Form.Label>
-              <Form.Control type="email" autoFocus />
+              <Form.Label>Label</Form.Label>
+              <Form.Control  autoFocus onInput={handleChange} />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => handleDelete()}>
+          <Button variant="danger" onClick={() => handleDelete()}>
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>

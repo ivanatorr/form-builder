@@ -5,6 +5,7 @@ import { Button, Modal, CloseButton } from "react-bootstrap";
 import { SectionLabel } from "../components/SectionLabel";
 
 export const TableGridView = ({ id, ...props }) => {
+    
 const editor = useEditor({
 id: id,
 });
@@ -45,10 +46,10 @@ onDragEnd={editor.handleDragEnd}
 // onDrop={editor.handleDrop}
 draggable={true}
 >
-<Modal.Header>
-<TableGrid {...props} />
 <CloseButton onClick={() => handleDelete()} />
-</Modal.Header>
+<TableGrid {...props} />
+
+
 {/* <Button variant="danger" onClick={() => handleDelete()}>
 x
 </Button> */}
