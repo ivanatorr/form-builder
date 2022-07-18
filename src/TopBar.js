@@ -1,6 +1,10 @@
+import { React, useState } from "react";
 import { useBuilder } from "build-ui";
+import { Button, Modal, Form } from "react-bootstrap";
+import { SectionView } from "./viewComponents/SectionView";
+import { Section } from "./components/Section";
 
-const TopBar = () => {
+const TopBar = (props) => {
   const builder = useBuilder();
   const {
     canUndo,
@@ -21,13 +25,15 @@ const TopBar = () => {
   };
   return (
     <div>
-      <button onClick={handleSave}>Save</button>
-      <button disabled={!canRedo} onClick={handleRedo}>
+      <Button variant="secondary" onClick={handleSave}>
+        Save
+      </Button>
+      <Button variant="secondary" disabled={!canRedo} onClick={handleRedo}>
         Redo
-      </button>
-      <button disabled={!canUndo} onClick={handleUndo}>
+      </Button>
+      <Button variant="secondary" disabled={!canUndo} onClick={handleUndo}>
         Undo
-      </button>
+      </Button>
     </div>
   );
 };

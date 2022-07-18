@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import { DnDBuilder, useEditor, useActions } from "build-ui";
+import { DnDBuilder, useEditor, useActions, DnDBuilderHOC } from "build-ui";
 import Input from "../components/Input.js";
-import {
-  Button,
-  Modal,
-  Form,
-  ButtonGroup
-} from "react-bootstrap";
-
-
+import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
+const BuilderInput = DnDBuilderHOC(Input);
 export const InputView = ({ id, props }) => {
   const [labelChange, setLabel] = useState("");
   const [show, setShow] = useState(false);
@@ -42,17 +36,19 @@ export const InputView = ({ id, props }) => {
   return (
     <>
       <div onClick={handleShow}>
-        <DnDBuilder
+        <BuilderInput
           onDragStart={editor.handleDragStart}
           onDragEnd={editor.handleDragEnd}
           onDragLeave={editor.toDnDHandler}
           draggable={true}
+          label={labelChange}
+          type={typeInput}
         >
-          <Input label={labelChange} type={typeInput} />
+          {/* <Input  /> */}
           {/* <Button variant="danger" onClick={() => handleDelete()}>
             x
           </Button> */}
-        </DnDBuilder>
+        </BuilderInput>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -70,18 +66,6 @@ export const InputView = ({ id, props }) => {
           <div className="modulDropdown">
             <label>
               Change type of input
-              {/* <select className="dropbtn" > */}
-              {/* <Dropdown className="mb-3 mt-3 " onChange={handleChange}>
-                <Dropdown.Toggle variant="secondary">
-                  Select type
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu variant="dark">
-                  <Dropdown.Item value={"email"}>Email</Dropdown.Item>
-                  <Dropdown.Item value={"password"}>Password</Dropdown.Item>
-                  <Dropdown.Item value={"number"}>Number</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown> */}
               <div class="dropdown">
                 <select class="form-select" onChange={handleChangeType}>
                   <option>Pick type</option>

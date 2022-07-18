@@ -2,11 +2,12 @@ import React from "react";
 import { DnDBuilder, useTools, item, branch } from "build-ui";
 import { Button } from "react-bootstrap";
 
-const InputTools = () => {
+const InputTools = (props) => {
   const tools = useTools();
   const handleDragTool = () => {
     const input = item({
       type: "Input",
+      label: props.label,
     });
     const data = branch(input);
     tools.triggerDragStart({

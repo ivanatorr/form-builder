@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DnDBuilder, useEditor, useActions } from "build-ui";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 import ComboBox from "../components/ComboBox.js";
 
 export const ComboBoxView = ({ id }) => {
@@ -13,9 +13,9 @@ export const ComboBoxView = ({ id }) => {
   const editor = useEditor({
     id: id,
   });
-  const handleChangeSize = (event) =>{
-    setSize(event.target.value)
-  }
+  const handleChangeSize = (event) => {
+    setSize(event.target.value);
+  };
   const handleChange = (event) => {
     setLabel(event.target.value);
   };
@@ -42,7 +42,7 @@ export const ComboBoxView = ({ id }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
         >
-          <ComboBox label={labelChange} size={sizeChange}/>
+          <ComboBox label={labelChange} size={sizeChange} />
           {/* <Button variant="danger" onClick={() => handleDelete()}>
         x
       </Button> */}
@@ -56,10 +56,15 @@ export const ComboBoxView = ({ id }) => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Label</Form.Label>
-              <Form.Control autoFocus onInput={handleChange}/>
+              <Form.Control autoFocus onInput={handleChange} />
             </Form.Group>
           </Form>
-          <div class="dropdown">
+        </Modal.Body>
+        <ButtonGroup size="medium" className="mb-2">
+          <div className="modulDropdown">
+            <label>
+              Pick Size
+              <div class="dropdown">
                 <select class="form-select" onChange={handleChangeSize}>
                   <option>Pick size</option>
                   <option value={""}>Medium</option>
@@ -67,7 +72,10 @@ export const ComboBoxView = ({ id }) => {
                   <option value={"lg"}>Large</option>
                 </select>
               </div>
-        </Modal.Body>
+            </label>
+          </div>
+        </ButtonGroup>
+
         <Modal.Footer>
           <Button variant="danger" onClick={() => handleDelete()}>
             Delete

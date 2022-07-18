@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Builder, Workspace, item, branch } from "build-ui";
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Button, Modal, Form } from "react-bootstrap";
 import AlertTools from "./components/AlterTools";
 import { AlertView } from "./viewComponents/AlertView";
 import { SectionView } from "./viewComponents/SectionView";
@@ -21,13 +21,17 @@ import TableGridTools from "./components/TableGridTools";
 import TopBar from "./TopBar";
 import { TableRowView } from "./viewComponents/TableRowView";
 import { TableDataView } from "./viewComponents/TableDataView";
+import "./App.css";
 
 const MyBuilder = () => {
   const section = item({
     type: "Section",
     props: {},
   });
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const tree = branch(section);
 
   const view = {
@@ -52,32 +56,55 @@ const MyBuilder = () => {
     <>
       <Builder initialTree={tree}>
         <TopBar />
+        <Button variant="secondary" onClick={handleShow}>
+          Preview
+        </Button>
+        <div>
+          <Modal show={show} onHide={handleClose} size="lg">
+            <Modal.Header closeButton>
+              <Modal.Title>Preview</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="modulW">
+              <Workspace view={view} />
+            </Modal.Body>
+            <Modal.Footer>
+              {/* <Button variant="danger" onClick={() => handleDelete()}>
+            Delete
+          </Button> */}
+              <Button variant="primary" onClick={handleClose}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
+
         <Workspace view={view} />
+
         <div className="notUse">
           <div className="mt-10">
-          <ListGroup >
-            <ListGroup.Item>
-              <AlertTools />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <InputTools />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <CheckBoxTools />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <ListBoxTools />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <ComboBoxTools />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <RadioButtonsTools />
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <TableGridTools />
-            </ListGroup.Item>
-          </ListGroup>
+            <ListGroup>
+              <ListGroup.Item>
+                <AlertTools />
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <InputTools />
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <CheckBoxTools />
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <ListBoxTools />
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <ComboBoxTools />
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <RadioButtonsTools />
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <TableGridTools />
+              </ListGroup.Item>
+            </ListGroup>
           </div>
         </div>
       </Builder>

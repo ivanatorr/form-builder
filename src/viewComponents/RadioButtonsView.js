@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DnDBuilder, useEditor, useActions } from "build-ui";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 import RadioButtons from "../components/RadioButtons.js";
 
 export const RadioButtonsView = ({ id }) => {
@@ -10,10 +10,10 @@ export const RadioButtonsView = ({ id }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleChangeSize = (event) =>{
-    setSize(event.target.value)
-  }
-  
+  const handleChangeSize = (event) => {
+    setSize(event.target.value);
+  };
+
   const editor = useEditor({
     id: id,
   });
@@ -37,7 +37,7 @@ export const RadioButtonsView = ({ id }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
         >
-          <RadioButtons size={sizeChange}/>
+          <RadioButtons size={sizeChange} />
           {/* <Button variant="danger" onClick={() => handleDelete()}>
         x
       </Button> */}
@@ -55,7 +55,11 @@ export const RadioButtonsView = ({ id }) => {
             </Form.Group>
           </Form>
         </Modal.Body>
-        <div class="dropdown">
+        <ButtonGroup size="medium" className="mb-2">
+          <div className="modulDropdown">
+            <label>
+              Pick Size
+              <div class="dropdown">
                 <select class="form-select" onChange={handleChangeSize}>
                   <option>Pick size</option>
                   <option value={""}>Medium</option>
@@ -63,6 +67,9 @@ export const RadioButtonsView = ({ id }) => {
                   <option value={"lg"}>Large</option>
                 </select>
               </div>
+            </label>
+          </div>
+        </ButtonGroup>
         <Modal.Footer>
           <Button variant="danger" onClick={() => handleDelete()}>
             Delete

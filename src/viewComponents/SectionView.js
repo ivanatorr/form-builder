@@ -1,7 +1,8 @@
 import React from "react";
-import { DnDBuilder, useEditor } from "build-ui";
+import { useEditor, DnDBuilderHOC } from "build-ui";
 import { Section } from "../components/Section";
 
+const BuilderSection = DnDBuilderHOC(Section);
 export const SectionView = ({ id, ...props }) => {
   const editor = useEditor({
     id: id,
@@ -10,15 +11,8 @@ export const SectionView = ({ id, ...props }) => {
   return (
     <>
       <div className="usePos">
-        <DnDBuilder onDrop={editor.handleDrop}>
-          <Section {...props}></Section>
-        </DnDBuilder>
+        <BuilderSection onDrop={editor.handleDrop} {...props}></BuilderSection>
       </div>
-      {/* <div className="use">
-        <DnDBuilder onDrop={editorLabel.handleDrop}>
-          <SectionLabel {...props}></SectionLabel>
-        </DnDBuilder>
-      </div> */}
     </>
   );
 };

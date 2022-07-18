@@ -47,10 +47,14 @@
 }
 .usePosTable {
   float: left;
-  width: 800px;
+  width: 795px;
   min-height: 800px;
   display: table-cell;
   height: auto;
+}
+.my-modal {
+  width: 900px; /* Occupy the 90% of the screen width */
+  max-width: none !important;
 }
 .tableGrid {
   width: 300px;
@@ -68,6 +72,9 @@ th, td {
 
 .modulDropdown {
   margin-left: 18px;
+}
+.modulW {
+  margin-left: -17px;
 }
 .usePos {
   float: left;

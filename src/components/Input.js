@@ -1,10 +1,10 @@
 import React from "react";
 import { Form, InputGroup } from "react-bootstrap";
 
-const Input = (props) => {
+const Input = React.forwardRef(({ ...props }, ref) => {
   return (
     <>
-      <InputGroup className="mb-3 mt-3">
+      <InputGroup className="mb-3 mt-3" ref={ref}>
         <InputGroup.Text id="inputGroup-sizing-default">
           {props.label}
         </InputGroup.Text>
@@ -16,6 +16,6 @@ const Input = (props) => {
       </InputGroup>
     </>
   );
-};
+});
 
 export default Input;
