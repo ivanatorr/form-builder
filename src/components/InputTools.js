@@ -5,9 +5,13 @@ import { Button } from "react-bootstrap";
 const InputTools = (props) => {
   const tools = useTools();
   const handleDragTool = () => {
+    const inputProps = {
+      type: 'text',
+      label: 'My Input'
+    }
     const input = item({
       type: "Input",
-      label: props.label,
+      props: inputProps,
     });
     const data = branch(input);
     tools.triggerDragStart({
