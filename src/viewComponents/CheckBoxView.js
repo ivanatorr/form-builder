@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { DnDBuilder, useEditor, useActions } from "build-ui";
+import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form } from "react-bootstrap";
 import CheckBox from "../components/CheckBox.js";
 
-export const CheckBoxView = ({ id }) => {
+const CheckBoxBuilder = DnDBuilderHOC(CheckBox);
+
+export const CheckBoxView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
   const [labelChange, setLabel] = useState("Checkbox");
 
@@ -15,7 +17,6 @@ export const CheckBoxView = ({ id }) => {
   };
   const editor = useEditor({
     id: id,
-    type: "checkbox",
   });
   const actions = useActions();
   const handleDelete = () => {
@@ -32,17 +33,18 @@ export const CheckBoxView = ({ id }) => {
   return (
     <>
       <div onClick={handleShow}>
-        <DnDBuilder
+        <CheckBoxBuilder
           onDragStart={editor.handleDragStart}
           onDragEnd={editor.handleDragEnd}
           draggable={true}
+          {...props}
         >
-          <CheckBox label={labelChange}/>
+          {/* <CheckBox label={labelChange} /> */}
 
           {/* <Button variant="danger" onClick={() => handleDelete()}>
             x
           </Button> */}
-        </DnDBuilder>
+        </CheckBoxBuilder>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -52,7 +54,12 @@ export const CheckBoxView = ({ id }) => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Label</Form.Label>
-              <Form.Control  autoFocus onInput={handleChange} />
+              <Form.Control
+                autoFocus
+                name="label"
+                value={props.label}
+                onChange={editor.handleUpdate}
+              />
             </Form.Group>
           </Form>
         </Modal.Body>

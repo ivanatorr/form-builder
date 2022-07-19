@@ -1,18 +1,19 @@
 import React from "react";
 import { Dropdown, ButtonGroup, DropdownButton } from "react-bootstrap";
 
-const ComboBox = (props) => {
+const ComboBox = React.forwardRef(({ ...props }, ref) => {
   return (
     <>
-    <div className="mb-3 mt-3">
-    {[DropdownButton].map((DropdownType, idx) => (
+      <div className="mb-3 mt-3">
+        {[DropdownButton].map((DropdownType, idx) => (
           <DropdownType
-            as={ButtonGroup} 
+            as={ButtonGroup}
             variant="secondary"
             key={idx}
             id={`dropdown-button-drop-${idx}`}
             size={props.size}
             title={props.label}
+            ref={ref}
           >
             <Dropdown.Item eventKey="1">Action</Dropdown.Item>
             <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
@@ -22,6 +23,6 @@ const ComboBox = (props) => {
       </div>
     </>
   );
-};
+});
 
 export default ComboBox;

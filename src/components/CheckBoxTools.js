@@ -1,12 +1,15 @@
 import React from "react";
 import { DnDBuilder, useTools, item, branch } from "build-ui";
-import { Button } from "react-bootstrap";
 
 const CheckBoxTools = () => {
   const tools = useTools();
   const handleDragTool = () => {
+    const checkboxProps = {
+      label: "CheckBox",
+    };
     const checkbox = item({
       type: "CheckBox",
+      props: checkboxProps,
     });
     const data = branch(checkbox);
     tools.triggerDragStart({

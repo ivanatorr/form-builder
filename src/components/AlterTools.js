@@ -9,7 +9,8 @@ const AlterTools = () => {
   const handleDragTool = () => {
     const alertProps = {
       message: "How is it going, folk?",
-      text: "Greet me",
+      label: "Greet me",
+      size: "",
     };
     const alert = item({
       type: "Alert",

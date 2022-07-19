@@ -5,8 +5,13 @@ import { Button } from "react-bootstrap";
 const ComboBoxTools = () => {
   const tools = useTools();
   const handleDragTool = () => {
+    const comboBoxProps = {
+      label: "Combobox",
+      size: "",
+    };
     const comboBox = item({
       type: "ComboBox",
+      props: comboBoxProps,
     });
     const data = branch(comboBox);
     tools.triggerDragStart({

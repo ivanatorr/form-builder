@@ -21,6 +21,7 @@ import TableGridTools from "./components/TableGridTools";
 import TopBar from "./TopBar";
 import { TableRowView } from "./viewComponents/TableRowView";
 import { TableDataView } from "./viewComponents/TableDataView";
+import MyWorkSpace from "./MyWorkSpace";
 import "./App.css";
 
 const MyBuilder = () => {
@@ -55,17 +56,16 @@ const MyBuilder = () => {
   return (
     <>
       <Builder initialTree={tree}>
-        <TopBar />
         <Button variant="secondary" onClick={handleShow}>
           Preview
         </Button>
-        <div>
+        <TopBar />
+
+        <div className="modal">
           <Modal show={show} onHide={handleClose} size="lg">
-            <Modal.Header closeButton>
-              <Modal.Title>Preview</Modal.Title>
-            </Modal.Header>
+            <Modal.Header closeButton />
             <Modal.Body className="modulW">
-              <Workspace view={view} />
+              <MyWorkSpace />
             </Modal.Body>
             <Modal.Footer>
               {/* <Button variant="danger" onClick={() => handleDelete()}>

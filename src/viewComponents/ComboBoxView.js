@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { DnDBuilder, useEditor, useActions } from "build-ui";
+import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 import ComboBox from "../components/ComboBox.js";
 
-export const ComboBoxView = ({ id }) => {
-  const [labelChange, setLabel] = useState("Combobox");
-  const [sizeChange, setSize] = useState("");
+const ComboBoxBuilder = DnDBuilderHOC(ComboBox);
+
+export const ComboBoxView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -13,12 +13,7 @@ export const ComboBoxView = ({ id }) => {
   const editor = useEditor({
     id: id,
   });
-  const handleChangeSize = (event) => {
-    setSize(event.target.value);
-  };
-  const handleChange = (event) => {
-    setLabel(event.target.value);
-  };
+
   const actions = useActions();
   const handleDelete = () => {
     actions.timeBatched.triggerDelete({
@@ -37,16 +32,17 @@ export const ComboBoxView = ({ id }) => {
     //     return (
     <>
       <div onClick={handleShow}>
-        <DnDBuilder
+        <ComboBoxBuilder
           onDragStart={editor.handleDragStart}
           onDragEnd={editor.handleDragEnd}
           draggable={true}
+          {...props}
         >
-          <ComboBox label={labelChange} size={sizeChange} />
+          {/* <ComboBox label={labelChange} size={sizeChange} /> */}
           {/* <Button variant="danger" onClick={() => handleDelete()}>
         x
       </Button> */}
-        </DnDBuilder>
+        </ComboBoxBuilder>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -56,7 +52,12 @@ export const ComboBoxView = ({ id }) => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Label</Form.Label>
-              <Form.Control autoFocus onInput={handleChange} />
+              <Form.Control
+                autoFocus
+                name="label"
+                value={props.label}
+                onChange={editor.handleUpdate}
+              />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -65,7 +66,12 @@ export const ComboBoxView = ({ id }) => {
             <label>
               Pick Size
               <div class="dropdown">
-                <select class="form-select" onChange={handleChangeSize}>
+                <select
+                  name="size"
+                  value={props.type}
+                  onChange={editor.handleUpdate}
+                  className="form-select"
+                >
                   <option>Pick size</option>
                   <option value={""}>Medium</option>
                   <option value={"sm"}>Small</option>

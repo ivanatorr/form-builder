@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const CheckBox = (props) => {
+const CheckBox = React.forwardRef(({ ...props }, ref) => {
   return (
     <>
       <Form className="mb-3 mt-3">
@@ -9,10 +9,11 @@ const CheckBox = (props) => {
           type="switch"
           id="custom-switch"
           label={props.label}
+          ref={ref}
         />
       </Form>
     </>
   );
-};
+});
 
 export default CheckBox;
