@@ -1,19 +1,19 @@
-import React from "react";
-import { useEditor, DnDBuilderHOC } from "build-ui";
+import React, {useState, useEffect} from "react";
+import { useActions, useEditor, DnDBuilderHOC } from "build-ui";
 import { Section } from "../components/Section";
 import { Table } from "react-bootstrap";
+import useDemoEditor from '../hooks/useDemoEditor'
 import "../App.css";
 import { listItemTextClasses } from "@mui/material";
 
 const BuilderSection = DnDBuilderHOC(Section);
 export const SectionView = ({ id, ...props }) => {
-  const editor = useEditor({
+  const actions = useActions();
+  const editor = useDemoEditor({
     id: id,
   });
-  const [backgroundColor, setBackgroundColor] = React.useState("#ffffff");
-  const appStyles = {
-    background: `${backgroundColor}`,
-  };
+  
+  
   return (
     <>
       <div className="usePos">
@@ -24,7 +24,9 @@ export const SectionView = ({ id, ...props }) => {
         <BuilderSection
           // style={appStyles}
           onDrop={editor.handleDrop}
-          // onDragEnter={() => setBackgroundColor("#0000ff")}
+
+          onDragEnter = {editor.handlePaintDropZone}
+          onDragLeave = {editor.handleEraseDropZone}
           // onDragLeave={() => setBackgroundColor("#ffffff")}
           // onMouseLeave={() => setBackgroundColor("#ffffff")}
           {...props}

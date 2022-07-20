@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import ListBox from "../components/ListBox.js";
 import { Button, Modal, Form } from "react-bootstrap";
-import Slider from "@mui/material/Slider";
+
 
 const ListBoxBuilder = DnDBuilderHOC(ListBox);
 
