@@ -3,7 +3,7 @@ import { DnDBuilder, useEditor, useActions } from "build-ui";
 import { TableGrid } from "../components/TableGrid";
 import { CloseButton } from "react-bootstrap";
 
-export const TableGridView = ({ id, ...props }) => {
+export const TableGridViewPre = ({ id, ...props }) => {
   const editor = useEditor({
     id: id,
   });
@@ -29,7 +29,6 @@ export const TableGridView = ({ id, ...props }) => {
         // onDrop={editor.handleDrop}
         draggable={true}
       >
-        <CloseButton onClick={() => handleDelete()} />
         <TableGrid {...props} />
 
         {/* <Button variant="danger" onClick={() => handleDelete()}>

@@ -6,7 +6,6 @@ import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 const BuilderInput = DnDBuilderHOC(Input);
 
 export const InputView = ({ id, ...props }) => {
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -29,8 +28,7 @@ export const InputView = ({ id, ...props }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
           {...props}
-        >
-        </BuilderInput>
+        ></BuilderInput>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -40,8 +38,8 @@ export const InputView = ({ id, ...props }) => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Change input label</Form.Label>
-              <Form.Control 
-                name='label'
+              <Form.Control
+                name="label"
                 value={props.label}
                 onChange={editor.handleUpdate}
               />
@@ -53,11 +51,11 @@ export const InputView = ({ id, ...props }) => {
             <label>
               Change type of input
               <div className="dropdown">
-                <select 
-                  name='type'
+                <select
+                  name="type"
                   value={props.type}
                   onChange={editor.handleUpdate}
-                  className="form-select" 
+                  className="form-select"
                 >
                   <option>Pick type</option>
                   <option value={"text"}>Text</option>

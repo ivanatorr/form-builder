@@ -25,14 +25,23 @@ const TopBar = (props) => {
   };
   return (
     <div>
-      <Button variant="secondary" onClick={handleSave}>
-        Save
+      <Button
+        size="sm"
+        variant="outline-secondary"
+        disabled={!canRedo}
+        onClick={handleRedo}
+        className="reDo"
+      >
+        <i class="fas fa-redo"></i>
       </Button>
-      <Button variant="secondary" disabled={!canRedo} onClick={handleRedo}>
-        Redo
-      </Button>
-      <Button variant="secondary" disabled={!canUndo} onClick={handleUndo}>
-        Undo
+      <Button
+        size="sm"
+        variant="outline-secondary"
+        disabled={!canUndo}
+        onClick={handleUndo}
+        className="unDo"
+      >
+        <i class="fas fa-undo"></i>
       </Button>
     </div>
   );

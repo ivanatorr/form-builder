@@ -47,8 +47,8 @@
 }
 .usePosTable {
   float: left;
-  width: 795px;
-  min-height: 800px;
+  width: 1125px;
+  min-height: 450px;
   display: table-cell;
   height: auto;
 }
@@ -62,8 +62,22 @@
   border-right: 30px solid rgb(255, 255, 255);
   border-left: 30px solid rgb(255, 255, 255);
 }
+.previewButton {
+  margin-top: -30px;
+  margin-left: 93%;
+}
 .modal {
-  margin-top: -40px;
+  margin-top: -15px;
+  min-height: 500px;
+  min-width: 1125px;
+}
+.unDo {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.reDo {
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 /* table, th, td {
@@ -79,10 +93,12 @@ th, td {
 }
 .modulW {
   margin-left: -17px;
+  height: 500px;
+  overflow: auto;
 }
 .usePos {
   float: left;
-  width: 800px;
+  width: 1125px;
   margin: 2px;
 }
 .usePosLabel {
@@ -91,7 +107,7 @@ th, td {
   height: 500px;
 }
 .notUse {
-  margin-top: 30px;
+  margin-top: 8px;
   float: left;
   width: 200px;
 }

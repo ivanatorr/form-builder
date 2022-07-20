@@ -56,14 +56,19 @@ const MyBuilder = () => {
   return (
     <>
       <Builder initialTree={tree}>
-        <Button variant="secondary" onClick={handleShow}>
-          Preview
-        </Button>
         <TopBar />
+        <div className="previewButton">
+          <Button variant="outline-secondary" onClick={handleShow}>
+            Preview
+          </Button>
+        </div>
 
         <div className="modal">
-          <Modal show={show} onHide={handleClose} size="lg">
-            <Modal.Header closeButton />
+          <Modal show={show} onHide={handleClose} size="xl">
+            <Modal.Header closeButton>
+              <h3> Preview</h3>
+            </Modal.Header>
+
             <Modal.Body className="modulW">
               <MyWorkSpace />
             </Modal.Body>
@@ -81,7 +86,7 @@ const MyBuilder = () => {
         <Workspace view={view} />
 
         <div className="notUse">
-          <div className="mt-10">
+          <div className="mt-0">
             <ListGroup>
               <ListGroup.Item>
                 <AlertTools />

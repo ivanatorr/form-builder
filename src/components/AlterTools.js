@@ -29,7 +29,7 @@ const AlterTools = () => {
         onDragEnd={tools.handleDragEnd}
         draggable={true}
       >
-        Alert
+        <i class="fas fa-bell"> Alert</i>
       </DnDBuilder>
     </div>
   );

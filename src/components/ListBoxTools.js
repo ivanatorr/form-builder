@@ -28,7 +28,7 @@ const ListBoxTools = () => {
         onDragEnd={tools.handleDragEnd}
         draggable={true}
       >
-        ListBox
+        <i class="fa fa-align-justify"> ListBox</i>
       </DnDBuilder>
     </div>
   );

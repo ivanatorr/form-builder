@@ -34,7 +34,7 @@ const TableGridTools = () => {
         onDragEnd={tools.handleDragEnd}
         draggable={true}
       >
-        TableGrid
+        <i class="fas fa-columns"> TableGrid</i>
       </DnDBuilder>
     </div>
   );

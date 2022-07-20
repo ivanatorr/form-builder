@@ -9,7 +9,7 @@ const Alert = React.forwardRef(({ ...props }, ref, ...rest) => {
     <>
       <Button
         variant="secondary"
-        onClick={handleAlert}
+        onDoubleClick={handleAlert}
         size={props.size}
         {...rest}
       >

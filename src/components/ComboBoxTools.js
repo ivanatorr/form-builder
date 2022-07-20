@@ -25,7 +25,7 @@ const ComboBoxTools = () => {
         onDragEnd={tools.handleDragEnd}
         draggable={true}
       >
-        ComboBox
+        <i class="fas fa-caret-square-down"> ComboBox</i>
       </DnDBuilder>
     </div>
   );
