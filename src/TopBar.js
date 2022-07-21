@@ -1,39 +1,15 @@
-import { React, useState } from "react";
-import { useBuilder } from "build-ui";
-import { Button, Modal, Form } from "react-bootstrap";
-import { SectionView } from "./viewComponents/SectionView";
-import { Section } from "./components/Section";
+//this file for unDo and reDo operations
 
-const TopBar = (props) => {
+import React from "react";
+import { useBuilder } from "build-ui";
+import { Button } from "react-bootstrap";
+//renders unDo and reDo buttons
+const TopBar = () => {
   const builder = useBuilder();
-  const {
-    canUndo,
-    canRedo,
-    handleRedo,
-    handleUndo,
-    json,
-    // Replot your workspace
-    // with another tree with this
-    // loading function below.
-    loadTree,
-  } = builder;
-  const handleSave = () => {
-    // Maybe let save your work
-    // to a storage service?
-    // Or a database? A file...?
-    console.log(json());
-  };
+  const { canUndo, canRedo, handleRedo, handleUndo } = builder;
+
   return (
     <div>
-      <Button
-        size="sm"
-        variant="outline-secondary"
-        disabled={!canRedo}
-        onClick={handleRedo}
-        className="reDo"
-      >
-        <i class="fas fa-redo"></i>
-      </Button>
       <Button
         size="sm"
         variant="outline-secondary"
@@ -42,6 +18,15 @@ const TopBar = (props) => {
         className="unDo"
       >
         <i class="fas fa-undo"></i>
+      </Button>
+      <Button
+        size="sm"
+        variant="outline-secondary"
+        disabled={!canRedo}
+        onClick={handleRedo}
+        className="reDo"
+      >
+        <i class="fas fa-redo"></i>
       </Button>
     </div>
   );

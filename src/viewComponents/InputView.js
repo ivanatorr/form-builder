@@ -1,10 +1,14 @@
+//This file cotains what user will be see
+//when drop element input in dropable section
+//and have madal window for editing styles
+
 import React, { useState } from "react";
 import { useEditor, useActions, DnDBuilderHOC } from "build-ui";
 import Input from "../components/Input.js";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 
 const BuilderInput = DnDBuilderHOC(Input);
-
+//renders input element
 export const InputView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);

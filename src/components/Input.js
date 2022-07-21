@@ -1,3 +1,5 @@
+//This file is HTML form with props for Input element
+
 import React from "react";
 import { Form, InputGroup } from "react-bootstrap";
 

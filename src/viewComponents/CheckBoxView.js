@@ -1,20 +1,20 @@
+//This file cotains what user will be see
+//when drop element CheckBox in dropable section
+//and have madal window for editing styles
+
 import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form } from "react-bootstrap";
 import CheckBox from "../components/CheckBox.js";
 
 const CheckBoxBuilder = DnDBuilderHOC(CheckBox);
-
+//renders checkboBox element
 export const CheckBoxView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
-  const [labelChange, setLabel] = useState("Checkbox");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleChange = (event) => {
-    setLabel(event.target.value);
-  };
   const editor = useEditor({
     id: id,
   });
@@ -24,12 +24,6 @@ export const CheckBoxView = ({ id, ...props }) => {
       id: id,
     });
   };
-  // const [inputFields, setInputFields] = useState([{ id: id }]);
-  // const removeFields = (index) => {
-  //   let data = [...inputFields];
-  //   data.splice(index, 1);
-  //   setInputFields(data);
-  // };
   return (
     <>
       <div onClick={handleShow}>
@@ -38,13 +32,7 @@ export const CheckBoxView = ({ id, ...props }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
           {...props}
-        >
-          {/* <CheckBox label={labelChange} /> */}
-
-          {/* <Button variant="danger" onClick={() => handleDelete()}>
-            x
-          </Button> */}
-        </CheckBoxBuilder>
+        ></CheckBoxBuilder>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

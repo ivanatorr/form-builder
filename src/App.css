@@ -28,7 +28,7 @@
   color: #61dafb;
 }
 
-.use {
+.section {
   float: left;
   display: block;
   width: 600px;
@@ -52,10 +52,7 @@
   display: table-cell;
   height: auto;
 }
-.my-modal {
-  width: 900px; /* Occupy the 90% of the screen width */
-  max-width: none !important;
-}
+
 .tableGrid {
   width: 300px;
   height: 300px;
@@ -66,13 +63,12 @@
   margin-top: -30px;
   margin-left: 93%;
 }
-.modal {
-  margin-top: -15px;
-  min-height: 500px;
-  min-width: 1125px;
+
+.modalHeaderPreview {
+  height: 20px;
 }
 .unDo {
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: 10px;
 }
 .reDo {
@@ -80,23 +76,15 @@
   margin-top: 10px;
 }
 
-/* table, th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  background-color: #96D4D4;
-} */
-
 .modulDropdown {
   margin-left: 18px;
 }
-.modulW {
+.modulBodyPreview {
   margin-left: -17px;
   height: 500px;
   overflow: auto;
 }
-.usePos {
+.sectionPos {
   float: left;
   width: 1125px;
   margin: 2px;
@@ -106,44 +94,13 @@ th, td {
   display: table-cell;
   height: 500px;
 }
-.notUse {
+.draggbleElements {
   margin-top: 28px;
   float: left;
   width: 200px;
 }
 .fontStyle {
   font-family: "Lucida Grande";
-}
-.close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 55px;
-  height: 55px;
-  cursor: pointer;
-  border: 4px solid #e62f57;
-  border-radius: 50%;
-}
-
-.close:before,
-.close:after {
-  content: "";
-  position: absolute;
-  top: 21px;
-  left: 10px;
-  width: 26px;
-  height: 4px;
-  background: #e62f57;
-}
-
-.close:before {
-  webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.close:after {
-  webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
 }
 
 @keyframes App-logo-spin {

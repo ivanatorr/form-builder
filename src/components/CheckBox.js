@@ -1,3 +1,5 @@
+//This file is HTML form with props for Checkbox element
+
 import React from "react";
 import { Form } from "react-bootstrap";
 

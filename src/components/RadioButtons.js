@@ -1,3 +1,5 @@
+//This file is HTML form with props for RadioButtons element
+
 import React from "react";
 import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 

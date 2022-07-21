@@ -1,3 +1,5 @@
+//This file contains all props for draggble element CheckBox that dragging on dropable place
+
 import React from "react";
 import { DnDBuilder, useTools, item, branch } from "build-ui";
 

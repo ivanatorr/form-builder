@@ -1,7 +1,7 @@
+//This file contains all props for draggble element Alert that dragging on dropable place
+
 import React from "react";
 import { DnDBuilder, useTools, item, branch } from "build-ui";
-import { Button } from "react-bootstrap";
-import App from "../App";
 import "../App.css";
 
 const AlterTools = () => {

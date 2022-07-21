@@ -1,18 +1,19 @@
+//main section for droping elements preview mode
+
 import React from "react";
 import { useEditor, DnDBuilderHOC } from "build-ui";
-import { Disable } from "react-disable";
 import { Section } from "../components/Section";
 import "../App.css";
 
 const BuilderSection = DnDBuilderHOC(Section);
+//function for render main dropable section
 export const SectionViewPre = ({ id, ...props }) => {
-  const [disableForm, setDisableForm] = React.useState(true);
   const editor = useEditor({
     id: id,
   });
   return (
     <>
-      <div className="usePos">
+      <div className="sectionPos">
         <BuilderSection onDrop={editor.handleDrop} {...props}></BuilderSection>
       </div>
     </>

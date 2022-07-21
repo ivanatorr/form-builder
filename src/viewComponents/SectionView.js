@@ -1,34 +1,29 @@
-import React, {useState, useEffect} from "react";
-import { useActions, useEditor, DnDBuilderHOC } from "build-ui";
+//main section for droping elements preview mode
+
+import React from "react";
+import { DnDBuilderHOC } from "build-ui";
 import { Section } from "../components/Section";
-import { Table } from "react-bootstrap";
-import useDemoEditor from '../hooks/useDemoEditor'
+import useDemoEditor from "../hooks/useDemoEditor";
 import "../App.css";
-import { listItemTextClasses } from "@mui/material";
 
 const BuilderSection = DnDBuilderHOC(Section);
+//function for renders main section
 export const SectionView = ({ id, ...props }) => {
-  const actions = useActions();
   const editor = useDemoEditor({
     id: id,
   });
-  
-  
+
   return (
     <>
-      <div className="usePos">
+      <div className="sectionPos">
         <div className="text-center">
           Drop zone <i class="far fa-hand-point-down"></i>
         </div>
 
         <BuilderSection
-          // style={appStyles}
           onDrop={editor.handleDrop}
-
-          onDragEnter = {editor.handlePaintDropZone}
-          onDragLeave = {editor.handleEraseDropZone}
-          // onDragLeave={() => setBackgroundColor("#ffffff")}
-          // onMouseLeave={() => setBackgroundColor("#ffffff")}
+          onDragEnter={editor.handlePaintDropZone}
+          onDragLeave={editor.handleEraseDropZone}
           {...props}
         ></BuilderSection>
       </div>

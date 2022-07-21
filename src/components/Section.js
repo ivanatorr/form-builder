@@ -1,3 +1,6 @@
+//This file is HTML form with props for Section element
+//that will be take draggble elements
+
 import React from "react";
 import "../App.css";
 import { Table } from "react-bootstrap";

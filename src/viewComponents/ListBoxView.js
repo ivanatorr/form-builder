@@ -1,21 +1,19 @@
+//This file cotains what user will be see
+//when drop element listBox in dropable section
+//and have modal window for editing styles
+
 import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import ListBox from "../components/ListBox.js";
 import { Button, Modal, Form } from "react-bootstrap";
 
-
 const ListBoxBuilder = DnDBuilderHOC(ListBox);
-
+//renders listBox element
 export const ListBoxView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
-  const [slider, setSlider] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const getValue = (event, value) => {
-    setSlider(value);
-  };
 
   const editor = useEditor({
     id: id,
@@ -27,12 +25,6 @@ export const ListBoxView = ({ id, ...props }) => {
     });
   };
 
-  // const [inputFields, setInputFields] = useState([{ id: id }]);
-  // const removeFields = (index) => {
-  //   let data = [...inputFields];
-  //   data.splice(index, 1);
-  //   setInputFields(data);
-  // };
   return (
     <>
       <div onClick={handleShow}>
@@ -41,12 +33,7 @@ export const ListBoxView = ({ id, ...props }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
           {...props}
-        >
-          {/* <ListBox /> */}
-          {/* <Button variant="danger" onClick={() => handleDelete()}>
-        x
-      </Button> */}
-        </ListBoxBuilder>
+        ></ListBoxBuilder>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -87,15 +74,6 @@ export const ListBoxView = ({ id, ...props }) => {
           </Form>
         </Modal.Body>
 
-        {/* <Slider
-          // defaultValue={50}
-          aria-label="Change width"
-          min={50}
-          step={1}
-          max={600}
-          value={slider}
-          onChange={editor.handleUpdate}
-        /> */}
         <Modal.Footer>
           <Button variant="danger" onClick={() => handleDelete()}>
             Delete

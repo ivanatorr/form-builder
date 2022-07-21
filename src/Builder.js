@@ -1,6 +1,8 @@
+//this file for assembly and render all using elements
+
 import React, { useState } from "react";
 import { Builder, Workspace, item, branch } from "build-ui";
-import { ListGroup, Button, Modal, Form } from "react-bootstrap";
+import { ListGroup, Button, Modal } from "react-bootstrap";
 import AlertTools from "./components/AlterTools";
 import { AlertView } from "./viewComponents/AlertView";
 import { SectionView } from "./viewComponents/SectionView";
@@ -15,15 +17,14 @@ import { ComboBoxView } from "./viewComponents/ComboBoxView";
 import RadioButtonsTools from "./components/RadioButtonsTools";
 import { RadioButtonsView } from "./viewComponents/RadioButtonsView";
 import { SectionLabelView } from "./viewComponents/SectionLabelView";
-import SectionLabelTools from "./components/SectionLabelTools";
 import { TableGridView } from "./viewComponents/TableGridView";
 import TableGridTools from "./components/TableGridTools";
 import TopBar from "./TopBar";
 import { TableRowView } from "./viewComponents/TableRowView";
 import { TableDataView } from "./viewComponents/TableDataView";
-import MyWorkSpace from "./MyWorkSpace";
+import WorkSpace from "./WorkSpace";
 import "./App.css";
-
+//renders all elements
 const MyBuilder = () => {
   const section = item({
     type: "Section",
@@ -48,10 +49,6 @@ const MyBuilder = () => {
     TableRow: TableRowView,
     TableData: TableDataView,
   };
-  //   const viewLabel = {
-  //     Section: SectionViewLabel,
-  //     CheckBox: CheckBoxView,
-  //   };
 
   return (
     <>
@@ -63,19 +60,16 @@ const MyBuilder = () => {
           </Button>
         </div>
 
-        <div className="modal">
+        <div>
           <Modal show={show} onHide={handleClose} size="xl">
-            <Modal.Header closeButton>
+            <Modal.Header className="modalHeaderPreview" closeButton>
               <h3> Preview</h3>
             </Modal.Header>
 
-            <Modal.Body className="modulW">
-              <MyWorkSpace />
+            <Modal.Body className="modulBodyPreview">
+              <WorkSpace />
             </Modal.Body>
             <Modal.Footer>
-              {/* <Button variant="danger" onClick={() => handleDelete()}>
-            Delete
-          </Button> */}
               <Button variant="primary" onClick={handleClose}>
                 Save Changes
               </Button>
@@ -85,7 +79,7 @@ const MyBuilder = () => {
 
         <Workspace view={view} />
 
-        <div className="notUse">
+        <div className="draggbleElements">
           <div className="mt-0">
             <ListGroup>
               <ListGroup.Item>

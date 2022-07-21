@@ -1,3 +1,5 @@
+//This file is HTML form with props for Alert element
+
 import React from "react";
 import { Button } from "react-bootstrap";
 

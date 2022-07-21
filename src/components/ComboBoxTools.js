@@ -1,6 +1,7 @@
+//This file contains all props for draggble element CombBox that dragging on dropable place
+
 import React from "react";
 import { DnDBuilder, useTools, item, branch } from "build-ui";
-import { Button } from "react-bootstrap";
 
 const ComboBoxTools = () => {
   const tools = useTools();

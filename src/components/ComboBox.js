@@ -1,3 +1,5 @@
+//This file is HTML form with props for ComboBox element
+
 import React from "react";
 import { Dropdown, ButtonGroup, DropdownButton } from "react-bootstrap";
 

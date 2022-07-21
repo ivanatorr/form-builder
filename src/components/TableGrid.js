@@ -1,3 +1,6 @@
+//That HTML form needs for tableGrid layout and
+//will be body of table
+
 import React from "react";
 import "../App.css";
 import { Table } from "react-bootstrap";

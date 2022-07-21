@@ -1,6 +1,10 @@
+//This file contains all props for draggble element TableGrid
+//that dragging on dropable place
+//set all dependencies for two colomns
+//of table layout
+
 import React from "react";
 import { DnDBuilder, useTools, item, branch } from "build-ui";
-import { Button } from "react-bootstrap";
 
 const TableGridTools = () => {
   const tools = useTools();

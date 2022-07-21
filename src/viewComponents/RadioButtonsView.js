@@ -1,20 +1,19 @@
+//This file cotains what user will be see
+//when drop element radioButtons in dropable section
+//and have madal window for editing styles
+
 import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 import RadioButtons from "../components/RadioButtons.js";
 
 const RadioButtonsBuilder = DnDBuilderHOC(RadioButtons);
-
+//function for renders radioButtons
 export const RadioButtonsView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
-  const [sizeChange, setSize] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const handleChangeSize = (event) => {
-    setSize(event.target.value);
-  };
 
   const editor = useEditor({
     id: id,
@@ -25,12 +24,6 @@ export const RadioButtonsView = ({ id, ...props }) => {
       id: id,
     });
   };
-  // const [inputFields, setInputFields] = useState([{ id: id }]);
-  // const removeFields = (index) => {
-  //   let data = [...inputFields];
-  //   data.splice(index, 1);
-  //   setInputFields(data);
-  // };
   return (
     <>
       <div onClick={handleShow}>
@@ -39,12 +32,7 @@ export const RadioButtonsView = ({ id, ...props }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
           {...props}
-        >
-          {/* <RadioButtons size={sizeChange} /> */}
-          {/* <Button variant="danger" onClick={() => handleDelete()}>
-        x
-      </Button> */}
-        </RadioButtonsBuilder>
+        ></RadioButtonsBuilder>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

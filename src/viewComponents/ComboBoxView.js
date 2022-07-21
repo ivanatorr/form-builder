@@ -1,10 +1,14 @@
+//This file cotains what user will be see
+//when drop element ComboBox in dropable section
+//and have madal window for editing styles
+
 import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 import ComboBox from "../components/ComboBox.js";
 
 const ComboBoxBuilder = DnDBuilderHOC(ComboBox);
-
+//renders comboBox element
 export const ComboBoxView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
 
@@ -20,16 +24,7 @@ export const ComboBoxView = ({ id, ...props }) => {
       id: id,
     });
   };
-  // const [inputFields, setInputFields] = useState([{ id: id }]);
-  // const removeFields = (index) => {
-  //   let data = [...inputFields];
-  //   data.splice(index, 1);
-  //   setInputFields(data);
-  // };
   return (
-    // <form>
-    //   {inputFields.map((input, index) => {
-    //     return (
     <>
       <div onClick={handleShow}>
         <ComboBoxBuilder
@@ -37,12 +32,7 @@ export const ComboBoxView = ({ id, ...props }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
           {...props}
-        >
-          {/* <ComboBox label={labelChange} size={sizeChange} /> */}
-          {/* <Button variant="danger" onClick={() => handleDelete()}>
-        x
-      </Button> */}
-        </ComboBoxBuilder>
+        ></ComboBoxBuilder>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -92,8 +82,5 @@ export const ComboBoxView = ({ id, ...props }) => {
         </Modal.Footer>
       </Modal>
     </>
-    //     );
-    //   })}
-    // </form>
   );
 };

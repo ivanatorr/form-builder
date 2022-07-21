@@ -1,10 +1,14 @@
+//This file cotains what user will be see
+//when drop element Alert in dropable section
+//and have madal window for editing styles
+
 import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 import Alert from "../components/Alert.js";
 
 const AlertBuilder = DnDBuilderHOC(Alert);
-
+//renders alert element
 export const AlertView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
 
@@ -29,9 +33,7 @@ export const AlertView = ({ id, ...props }) => {
           onDragEnd={editor.handleDragEnd}
           draggable={true}
           {...props}
-        >
-          {/* <Alert {...props} /> */}
-        </AlertBuilder>
+        ></AlertBuilder>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
