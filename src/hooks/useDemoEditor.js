@@ -300,7 +300,7 @@ const useDemoEditor = (params) => {
   const [paint, setPaint] = useState();
   function handlePaintDropZone(event) {
     const props = {
-      style: { backgroundColor: "rgb(255, 230, 230)" },
+      style: { backgroundColor: "#f0f0f0" },
     };
     actions.unrecorded.triggerUpdate({
       id: id,

@@ -6,6 +6,6 @@ import { TableRow } from "../components/TableRow";
 
 const BuilderTableRow = DnDBuilderHOC(TableRow);
 //renders TableRow element
-export const TableRowView = ({ id, ...props }) => {
-  return <BuilderTableRow className="tableRow" {...props} />;
+export const TableRowViewPre = ({ id, ...props }) => {
+  return <BuilderTableRow className="tableRowPre" {...props} />;
 };

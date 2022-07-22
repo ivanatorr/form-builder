@@ -24,7 +24,10 @@ export const TableGridView = ({ id, ...props }) => {
         onDragEnd={editor.handleDragEnd}
         draggable={true}
       >
-        <CloseButton onClick={() => handleDelete()} />
+        <CloseButton
+          className="tableGridCloseButton"
+          onClick={() => handleDelete()}
+        />
         <TableGrid {...props} />
       </DnDBuilder>
     </>

@@ -1,63 +1,31 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.section {
-  float: left;
-  display: block;
-  width: 600px;
-
-  margin: 2px;
-  border: 2px solid black;
-}
-
-.useLabel {
-  float: left;
-  display: block;
-  width: 100%;
-
-  margin: 2px;
-  border: 2px solid black;
-}
 .usePosTable {
   float: left;
   width: 1125px;
   min-height: 450px;
   display: table-cell;
   height: auto;
+  background-color: none !important;
+  border: dotted 2px rgb(163, 161, 161);
 }
 
 .tableGrid {
   width: 300px;
   height: 300px;
-  border-right: 30px solid rgb(255, 255, 255);
-  border-left: 30px solid rgb(255, 255, 255);
+  border-left: dashed 2px rgb(163, 161, 161);
+  /* border-left: 30px solid rgb(255, 255, 255); */
+}
+.tableGridPre {
+  width: 300px;
+  height: 300px;
+  background-color: white !important;
+  border: none !important;
+  /* border-left: 30px solid rgb(255, 255, 255); */
+}
+.tableRowPre {
+  border: none;
+}
+.tableRow {
+  border: dashed 2px rgb(163, 161, 161);
 }
 .previewButton {
   margin-top: -30px;
@@ -65,7 +33,7 @@
 }
 
 .modalHeaderPreview {
-  height: 20px;
+  height: 50px;
 }
 .unDo {
   margin-left: 10px;
@@ -89,25 +57,27 @@
   width: 1125px;
   margin: 2px;
 }
+.sectionPre {
+  background-color: rgb(255, 255, 255) !important;
+}
 .usePosLabel {
   width: 100%;
   display: table-cell;
   height: 500px;
 }
+.modalPre {
+  height: 100%;
+  overflow-y: hidden !important;
+}
 .draggbleElements {
   margin-top: 28px;
   float: left;
   width: 200px;
+  margin-left: 8px;
 }
 .fontStyle {
   font-family: "Lucida Grande";
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tableGridCloseButton {
+  float: right;
 }

@@ -7,13 +7,13 @@ import useDemoEditor from "../hooks/useDemoEditor";
 
 const BuilderTableData = DnDBuilderHOC(TableData);
 //renders tableData element and accep draggble elements
-export const TableDataView = ({ id, ...props }) => {
+export const TableDataViewPre = ({ id, ...props }) => {
   const editor = useDemoEditor({
     id: id,
   });
   return (
     <BuilderTableData
-      className="tableGrid"
+      className="tableGridPre"
       {...props}
       onDrop={editor.handleDrop}
       onDragEnter={editor.handlePaintDropZone}

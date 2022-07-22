@@ -14,7 +14,11 @@ export const SectionViewPre = ({ id, ...props }) => {
   return (
     <>
       <div className="sectionPos">
-        <BuilderSection onDrop={editor.handleDrop} {...props}></BuilderSection>
+        <BuilderSection
+          className="sectionPre"
+          onDrop={editor.handleDrop}
+          {...props}
+        ></BuilderSection>
       </div>
     </>
   );

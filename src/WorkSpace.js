@@ -11,8 +11,8 @@ import { ComboBoxView } from "./viewComponents/ComboBoxView";
 import { RadioButtonsView } from "./viewComponents/RadioButtonsView";
 import { SectionLabelView } from "./viewComponents/SectionLabelView";
 import { TableGridViewPre } from "./viewComponents/TableGridViewPre";
-import { TableRowView } from "./viewComponents/TableRowView";
-import { TableDataView } from "./viewComponents/TableDataView";
+import { TableRowViewPre } from "./viewComponents/TableRowViewPre";
+import { TableDataViewPre } from "./viewComponents/TableDataViewPre";
 import { Disable } from "react-disable";
 import "./App.css";
 //renders all elements in main dropable section
@@ -28,8 +28,8 @@ function WorkSpace() {
     RadioButtons: RadioButtonsView,
     SectionLabel: SectionLabelView,
     TableGrid: TableGridViewPre,
-    TableRow: TableRowView,
-    TableData: TableDataView,
+    TableRow: TableRowViewPre,
+    TableData: TableDataViewPre,
   };
   return (
     <Disable disabled={disableForm} disabledOpacity={1}>

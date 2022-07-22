@@ -61,9 +61,14 @@ const MyBuilder = () => {
         </div>
 
         <div>
-          <Modal show={show} onHide={handleClose} size="xl">
+          <Modal
+            show={show}
+            onHide={handleClose}
+            size="xl"
+            className="modalPre"
+          >
             <Modal.Header className="modalHeaderPreview" closeButton>
-              <h3> Preview</h3>
+              <h4> Preview</h4>
             </Modal.Header>
 
             <Modal.Body className="modulBodyPreview">
