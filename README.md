@@ -1,70 +1,48 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# \[Form Builder\]
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+Front End application oriented to  create a simple one-page site or form to fill out by dragging the desired element onto the work surface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [React](https://reactjs.org/) single page application
+- Using [build-ui](https://luismps.github.io/build-ui/) to get better experience when creating form builder app
+- State management via [Redux](https://redux.js.org/)
+- For easy styling UI components using [Bootsrap React](https://react-bootstrap.github.io/)
+- To get cool icons was used [Font Awesome](https://www.w3schools.com/icons/default.asp)
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository and install the dependencies
+```bash
+npm install
+```
+2. Start the frontend application locally
+```bash
+npm start
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Available commands
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* `npm start`: Start the app locally in your development environment, by default it will be in http://localhost:3000.
+* `npm test`: Run tests using watch mode.
+* `npm lint`: Run linter.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Linter
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In order to lint the code, the project uses [ESLint](https://eslint.org/), which is provided by [Create React App](https://github.com/facebook/create-react-app).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you want to run the linter just type:
+```bash
+yarn lint
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+It's also convenient to integrate the linter warnings into your code editor, there are many plugins available for ESLint depending on your text editor used.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This app was bootstraped based on the template provided by [`create-react-app`](https://github.com/facebook/create-react-app)
