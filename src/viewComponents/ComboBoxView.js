@@ -6,10 +6,12 @@ import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
 import ComboBox from "../components/ComboBox.js";
+import { Disable } from "react-disable";
 
 const ComboBoxBuilder = DnDBuilderHOC(ComboBox);
 //renders comboBox element
 export const ComboBoxView = ({ id, ...props }) => {
+  const [disableForm, setDisableForm] = useState(true);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -27,12 +29,14 @@ export const ComboBoxView = ({ id, ...props }) => {
   return (
     <>
       <div onClick={handleShow}>
-        <ComboBoxBuilder
-          onDragStart={editor.handleDragStart}
-          onDragEnd={editor.handleDragEnd}
-          draggable={true}
-          {...props}
-        ></ComboBoxBuilder>
+        <Disable disabled={disableForm} disabledOpacity={1}>
+          <ComboBoxBuilder
+            onDragStart={editor.handleDragStart}
+            onDragEnd={editor.handleDragEnd}
+            draggable={true}
+            {...props}
+          ></ComboBoxBuilder>
+        </Disable>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

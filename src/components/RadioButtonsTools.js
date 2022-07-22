@@ -28,7 +28,11 @@ const RadioButtonsTools = () => {
         onDragEnd={tools.handleDragEnd}
         draggable={true}
       >
-        <i class="fas fa-ellipsis-h"> RadioButtons</i>
+        <div className="icons">
+          <i class="fas fa-ellipsis-h">
+            <span className="iconsText">RadioButtons</span>
+          </i>
+        </div>
       </DnDBuilder>
     </div>
   );

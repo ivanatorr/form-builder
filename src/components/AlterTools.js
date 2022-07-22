@@ -23,15 +23,21 @@ const AlterTools = () => {
   };
 
   return (
-    <div className="fontStyle">
-      <DnDBuilder
-        onDragStart={handleDragTool}
-        onDragEnd={tools.handleDragEnd}
-        draggable={true}
-      >
-        <i class="fas fa-bell"> Alert</i>
-      </DnDBuilder>
-    </div>
+    <>
+      <div className="fontStyle">
+        <DnDBuilder
+          onDragStart={handleDragTool}
+          onDragEnd={tools.handleDragEnd}
+          draggable={true}
+        >
+          <div className="icons">
+            <i class="fas fa-bell">
+              <span className="iconsText">Alert</span>
+            </i>
+          </div>
+        </DnDBuilder>
+      </div>
+    </>
   );
 };
 

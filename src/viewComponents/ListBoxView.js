@@ -42,28 +42,28 @@ export const ListBoxView = ({ id, ...props }) => {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Item 1 Label</Form.Label>
+              <Form.Label>{props.label1} Label</Form.Label>
               <Form.Control
                 autoFocus
                 name="label1"
                 value={props.label1}
                 onChange={editor.handleUpdate}
               />
-              <Form.Label>Item 2 Label</Form.Label>
+              <Form.Label>{props.label2} Label</Form.Label>
               <Form.Control
                 autoFocus
                 name="label2"
                 value={props.label2}
                 onChange={editor.handleUpdate}
               />
-              <Form.Label>Item 3 Label</Form.Label>
+              <Form.Label>{props.label3} Label</Form.Label>
               <Form.Control
                 autoFocus
                 name="label3"
                 value={props.label3}
                 onChange={editor.handleUpdate}
               />
-              <Form.Label>Item 4 Label</Form.Label>
+              <Form.Label>{props.label4} Label</Form.Label>
               <Form.Control
                 autoFocus
                 name="label4"

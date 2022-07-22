@@ -6,10 +6,12 @@ import React, { useState } from "react";
 import { useEditor, useActions, DnDBuilderHOC } from "build-ui";
 import Input from "../components/Input.js";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
+import { Disable } from "react-disable";
 
 const BuilderInput = DnDBuilderHOC(Input);
 //renders input element
 export const InputView = ({ id, ...props }) => {
+  const [disableForm, setDisableForm] = useState(true);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -27,12 +29,14 @@ export const InputView = ({ id, ...props }) => {
   return (
     <>
       <div onClick={handleShow}>
-        <BuilderInput
-          onDragStart={editor.handleDragStart}
-          onDragEnd={editor.handleDragEnd}
-          draggable={true}
-          {...props}
-        ></BuilderInput>
+        <Disable disabled={disableForm} disabledOpacity={1}>
+          <BuilderInput
+            onDragStart={editor.handleDragStart}
+            onDragEnd={editor.handleDragEnd}
+            draggable={true}
+            {...props}
+          ></BuilderInput>
+        </Disable>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

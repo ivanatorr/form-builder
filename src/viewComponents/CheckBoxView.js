@@ -1,15 +1,17 @@
-//This file cotains what user will be see
-//when drop element CheckBox in dropable section
-//and have madal window for editing styles
+// This file cotains what user will be see
+// when drop element CheckBox in dropable section
+// and have madal window for editing styles
 
 import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form } from "react-bootstrap";
 import CheckBox from "../components/CheckBox.js";
+import { Disable } from "react-disable";
 
 const CheckBoxBuilder = DnDBuilderHOC(CheckBox);
 //renders checkboBox element
 export const CheckBoxView = ({ id, ...props }) => {
+  const [disableForm, setDisableForm] = useState(true);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -27,12 +29,14 @@ export const CheckBoxView = ({ id, ...props }) => {
   return (
     <>
       <div onClick={handleShow}>
-        <CheckBoxBuilder
-          onDragStart={editor.handleDragStart}
-          onDragEnd={editor.handleDragEnd}
-          draggable={true}
-          {...props}
-        ></CheckBoxBuilder>
+        <Disable disabled={disableForm} disabledOpacity={1}>
+          <CheckBoxBuilder
+            onDragStart={editor.handleDragStart}
+            onDragEnd={editor.handleDragEnd}
+            draggable={true}
+            {...props}
+          ></CheckBoxBuilder>
+        </Disable>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

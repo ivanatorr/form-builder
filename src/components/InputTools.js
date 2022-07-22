@@ -26,7 +26,11 @@ const InputTools = (props) => {
         onDragEnd={tools.handleDragEnd}
         draggable={true}
       >
-        <i class="fa fa-font"> Input</i>
+        <div className="icons">
+          <i class="fa fa-font">
+            <span className="iconsText">Input</span>
+          </i>
+        </div>
       </DnDBuilder>
     </div>
   );

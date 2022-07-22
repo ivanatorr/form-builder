@@ -53,12 +53,15 @@ const MyBuilder = () => {
   return (
     <>
       <Builder initialTree={tree}>
-        <TopBar />
-        <div className="previewButton">
-          <Button variant="outline-secondary" onClick={handleShow}>
-            Preview
-          </Button>
-        </div>
+        <Modal.Header className="modalFooterPreview">
+          <TopBar />
+
+          <div className="previewButton">
+            <Button variant="outline-black" onClick={handleShow}>
+              Preview
+            </Button>
+          </div>
+        </Modal.Header>
 
         <div>
           <Modal
@@ -74,9 +77,9 @@ const MyBuilder = () => {
             <Modal.Body className="modulBodyPreview">
               <WorkSpace />
             </Modal.Body>
-            <Modal.Footer>
-              <Button variant="primary" onClick={handleClose}>
-                Save Changes
+            <Modal.Footer className="modalFooterPreview">
+              <Button variant="primary" onClick={handleClose} size="sm">
+                Close
               </Button>
             </Modal.Footer>
           </Modal>
@@ -87,6 +90,7 @@ const MyBuilder = () => {
         <div className="draggbleElements">
           <div className="mt-0">
             <ListGroup>
+              <h5>Elements</h5>
               <ListGroup.Item>
                 <AlertTools />
               </ListGroup.Item>
@@ -105,6 +109,7 @@ const MyBuilder = () => {
               <ListGroup.Item>
                 <RadioButtonsTools />
               </ListGroup.Item>
+              <h5>Layouts</h5>
               <ListGroup.Item>
                 <TableGridTools />
               </ListGroup.Item>

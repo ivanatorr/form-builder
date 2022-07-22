@@ -25,7 +25,11 @@ const CheckBoxTools = () => {
         onDragEnd={tools.handleDragEnd}
         draggable={true}
       >
-        <i class="fas fa-check-circle"> CheckBox</i>
+        <div className="icons">
+          <i class="fas fa-check-circle">
+            <span className="iconsText">CheckBox</span>
+          </i>
+        </div>
       </DnDBuilder>
     </div>
   );
