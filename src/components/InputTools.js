@@ -8,7 +8,7 @@ const InputTools = (props) => {
   const handleDragTool = () => {
     const inputProps = {
       type: "text",
-      label: "My Input",
+      label: "Input",
     };
     const input = item({
       type: "Input",

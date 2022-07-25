@@ -16,6 +16,7 @@ export const InputViewPre = ({ id, ...props }) => {
   return (
     <>
       <BuilderInput
+      
         onDragStart={editor.handleDragStart}
         onDragEnd={editor.handleDragEnd}
         draggable={true}

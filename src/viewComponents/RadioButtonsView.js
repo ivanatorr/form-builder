@@ -5,12 +5,14 @@
 import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
+import { Disable } from "react-disable";
 import RadioButtons from "../components/RadioButtons.js";
 
 const RadioButtonsBuilder = DnDBuilderHOC(RadioButtons);
 //function for renders radioButtons
 export const RadioButtonsView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
+  const [disableForm, setDisableForm] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -27,12 +29,14 @@ export const RadioButtonsView = ({ id, ...props }) => {
   return (
     <>
       <div onClick={handleShow}>
+        <Disable disabled={disableForm} disabledOpacity={1}>
         <RadioButtonsBuilder
           onDragStart={editor.handleDragStart}
           onDragEnd={editor.handleDragEnd}
           draggable={true}
           {...props}
         ></RadioButtonsBuilder>
+        </Disable>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

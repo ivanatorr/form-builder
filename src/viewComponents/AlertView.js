@@ -5,12 +5,14 @@
 import React, { useState } from "react";
 import { DnDBuilderHOC, useEditor, useActions } from "build-ui";
 import { Button, Modal, Form, ButtonGroup } from "react-bootstrap";
+import { Disable } from "react-disable";
 import Alert from "../components/Alert.js";
 
 const AlertBuilder = DnDBuilderHOC(Alert);
 //renders alert element
 export const AlertView = ({ id, ...props }) => {
   const [show, setShow] = useState(false);
+  const [disableForm, setDisableForm] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -28,12 +30,14 @@ export const AlertView = ({ id, ...props }) => {
   return (
     <>
       <div onClick={handleShow}>
+        <Disable disabled={disableForm} disabledOpacity={1}>
         <AlertBuilder
           onDragStart={editor.handleDragStart}
           onDragEnd={editor.handleDragEnd}
           draggable={true}
           {...props}
         ></AlertBuilder>
+        </Disable>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

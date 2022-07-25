@@ -9,9 +9,7 @@ const ListBoxTools = () => {
     const listBoxProps = {
       label1: "Item1",
       label2: "Item2",
-      label3: "Item3",
-      label4: "Item4",
-      width: "",
+     
     };
     const listBox = item({
       type: "ListBox",

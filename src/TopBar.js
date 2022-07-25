@@ -12,7 +12,7 @@ const TopBar = () => {
     <div>
       <Button
         size="sm"
-        variant="black"
+        variant="dark"
         disabled={!canUndo}
         onClick={handleUndo}
         className="unDo"
@@ -21,7 +21,7 @@ const TopBar = () => {
       </Button>
       <Button
         size="sm"
-        variant="black"
+        variant="dark"
         disabled={!canRedo}
         onClick={handleRedo}
         className="reDo"
