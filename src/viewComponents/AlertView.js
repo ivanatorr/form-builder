@@ -31,12 +31,12 @@ export const AlertView = ({ id, ...props }) => {
     <>
       <div onClick={handleShow}>
         <Disable disabled={disableForm} disabledOpacity={1}>
-        <AlertBuilder
-          onDragStart={editor.handleDragStart}
-          onDragEnd={editor.handleDragEnd}
-          draggable={true}
-          {...props}
-        ></AlertBuilder>
+          <AlertBuilder
+            onDragStart={editor.handleDragStart}
+            onDragEnd={editor.handleDragEnd}
+            draggable={true}
+            {...props}
+          ></AlertBuilder>
         </Disable>
       </div>
       <Modal show={show} onHide={handleClose}>
@@ -88,7 +88,7 @@ export const AlertView = ({ id, ...props }) => {
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Ok
           </Button>
         </Modal.Footer>
       </Modal>

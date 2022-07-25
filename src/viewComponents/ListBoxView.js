@@ -11,16 +11,13 @@ import { Disable } from "react-disable";
 const ListBoxBuilder = DnDBuilderHOC(ListBox);
 //renders listBox element
 export const ListBoxView = ({ id, ...props }) => {
-  const [labelChange1, setLabel1] = useState(props.label1)
-  const [labelChange2, setLabel2] = useState(props.label2)
   const [disableForm, setDisableForm] = useState(true);
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
     setShow(false);
-  }
+  };
   const handleShow = () => setShow(true);
-
 
   const editor = useEditor({
     id: id,
@@ -35,13 +32,13 @@ export const ListBoxView = ({ id, ...props }) => {
   return (
     <>
       <div onClick={handleShow}>
-      <Disable disabled={disableForm} disabledOpacity={1}>
-        <ListBoxBuilder
-          onDragStart={editor.handleDragStart}
-          onDragEnd={editor.handleDragEnd}
-          draggable={true}
-          {...props}
-        ></ListBoxBuilder>
+        <Disable disabled={disableForm} disabledOpacity={1}>
+          <ListBoxBuilder
+            onDragStart={editor.handleDragStart}
+            onDragEnd={editor.handleDragEnd}
+            draggable={true}
+            {...props}
+          ></ListBoxBuilder>
         </Disable>
       </div>
       <Modal show={show} onHide={handleClose}>
@@ -51,21 +48,20 @@ export const ListBoxView = ({ id, ...props }) => {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>{labelChange1} Label</Form.Label>
+              <Form.Label>{props.label1} Label</Form.Label>
               <Form.Control
                 autoFocus
                 name="label1"
-                value={labelChange1}
+                value={props.label1}
                 onChange={editor.handleUpdate}
               />
-              <Form.Label>{labelChange2} Label</Form.Label>
+              <Form.Label>{props.label2} Label</Form.Label>
               <Form.Control
                 autoFocus
                 name="label2"
-                value={labelChange2}
+                value={props.label2}
                 onChange={editor.handleUpdate}
               />
-           
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -75,7 +71,7 @@ export const ListBoxView = ({ id, ...props }) => {
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Ok
           </Button>
         </Modal.Footer>
       </Modal>

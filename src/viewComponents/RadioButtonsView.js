@@ -30,12 +30,12 @@ export const RadioButtonsView = ({ id, ...props }) => {
     <>
       <div onClick={handleShow}>
         <Disable disabled={disableForm} disabledOpacity={1}>
-        <RadioButtonsBuilder
-          onDragStart={editor.handleDragStart}
-          onDragEnd={editor.handleDragEnd}
-          draggable={true}
-          {...props}
-        ></RadioButtonsBuilder>
+          <RadioButtonsBuilder
+            onDragStart={editor.handleDragStart}
+            onDragEnd={editor.handleDragEnd}
+            draggable={true}
+            {...props}
+          ></RadioButtonsBuilder>
         </Disable>
       </div>
       <Modal show={show} onHide={handleClose}>
@@ -94,7 +94,7 @@ export const RadioButtonsView = ({ id, ...props }) => {
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Ok
           </Button>
         </Modal.Footer>
       </Modal>

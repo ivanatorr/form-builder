@@ -19,7 +19,7 @@ export const AlertViewPre = ({ id, ...props }) => {
       <AlertBuilder
         onDragStart={editor.handleDragStart}
         onDragEnd={editor.handleDragEnd}
-        draggable={true}
+        draggable={false}
         {...props}
       ></AlertBuilder>
     </>

@@ -8,8 +8,8 @@ const AlterTools = () => {
   const tools = useTools();
   const handleDragTool = () => {
     const alertProps = {
-      message: "How is it going, folk?",
-      label: "Greet me",
+      message: "Alert message",
+      label: "Alert",
       size: "",
     };
     const alert = item({

@@ -81,7 +81,7 @@ export const ComboBoxView = ({ id, ...props }) => {
             Delete
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Ok
           </Button>
         </Modal.Footer>
       </Modal>
