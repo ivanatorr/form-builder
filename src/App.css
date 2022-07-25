@@ -39,6 +39,7 @@
 }
 .modalFooterPreview {
   background-color: rgb(226, 226, 226) !important;
+  padding: 2px !important;
 }
 .header {
   text-align: center;

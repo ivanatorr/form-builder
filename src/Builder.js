@@ -109,6 +109,7 @@ const MyBuilder = () => {
               <ListGroup.Item>
                 <RadioButtonsTools />
               </ListGroup.Item>
+              <hr />
               <h5>Layouts</h5>
               <ListGroup.Item>
                 <TableGridTools />
